@@ -1,0 +1,36 @@
+.dropdown
+  display: none
+  position: absolute
+  background: $el-white
+  z-index: 100
+  +border-radius
+  overflow: hidden
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.3)
+  min-width: 210px
+  top: 100%
+  margin-top: 2px
+  color: $txt-dark
+  font-size: 15px
+  font-weight: 500
+  overflow-y: auto
+  max-height: 500px
+
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    .description
+      font-size: 12px
+      color: $txt-gray
+    li
+      height: 52px
+      display: flex
+      align-items: center
+      padding: 0 16px
+      border-bottom: 1px solid $el-line-gray
+      cursor: pointer
+      &.item--selected
+        background: $el-select
+
+  &[data-dropdown='city']
+    width: 270px

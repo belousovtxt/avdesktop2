@@ -1,0 +1,15 @@
+mixin SectionNews
+    section#news
+        .container
+            .section__head
+                h3 Новости и объявления
+                .action
+                    a(href="#").btn.btn--action Все новости
+
+
+            .row
+                .arr.arr-left
+                .arr.arr-right
+                +NewsItem(true)
+                +NewsItem
+                +NewsItem

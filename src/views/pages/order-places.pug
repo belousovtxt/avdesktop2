@@ -1,0 +1,67 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Выбор места на автобус Пермь - Березники"
+
+block content
+    +Head('default', '16 августа, 2 взрослых', undefined, true)
+        +Tabs(true, [{link: 'order-places.html', text: 'Выбор места', active: true}, {link: 'order-people.html', text: 'Оформление', active: false}, {link: 'order-payment.html', text: 'Оплата', active: false}]).head__tabs
+    +GridsContainer
+        block left
+            +Card(true, true, true).card--places.card--separations
+                block card_head
+                    span Места в салоне
+
+                block card_content
+                    - var n = 52;
+                    .places__list
+
+                        while n > 0
+                            if ((n%2) == 0)
+                                .places__row
+                            .places__item(class!=n<5?'places__disabled':null)(class!=n==8?'places__disabled':null)(class!=n==5?'places__active':null)=n--
+                        //.places__item.places__wheel
+                        .places__wheel
+                            .places__wheel_icon
+                                include ../../img/svg/i-helm.svg
+
+                block card_footer
+                    .places__info
+                        include ../../img/svg/i-inf_places.svg
+                        p Размещение мест на схеме может не соответствовать фактическому размещению мест в автобусе.
+
+                    .places__info_types
+                        .item
+                            .ptype
+                            span – свободно
+                        .item
+                            .ptype
+                            span – занято
+            +Button("Далее", 'link', 'order-people.html').container--grids__action
+
+        block right
+            .card.card--right-side.sticky
+                .ticket__dates.ticket__info
+                    +TicketDate('21:15', '16 августа', 'Пермь', 'Автовокзал "Пермь", улица Революции, 68')
+                    +TicketDate('00:45', '17 августа', 'Березники', 'Остановка "Советская площадь / нижний ЦУМ", улица Пятилетки, 40')
+                .ticket__info.ticket__info--other-info
+                    .item
+                        span.title Перевозчик:
+                        span.info Железов Д.В.
+                    .item
+                        span.title Автобус:
+                        span.info СЕТРА 49/0
+                .ticket__info.ticket__info--important
+                    span.important Необходим документ удостоверяющего личность
+                    span Билет можно не печатать
+                    span Регулярный рейс
+
+                .ticket__footer
+                    span.price 540 ₽
+                    span 2 билета по 270₽
+
+
+
+
+block scripts
+    script(src="js/main.js")

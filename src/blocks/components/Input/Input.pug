@@ -1,0 +1,26 @@
+mixin Input(type, name, label, value, js)
+    - var type = type || 'text';
+    - var name = name || 'name';
+    - var label = label || 'Label';
+    - var value = value || '';
+    if type === "text" || type === "password" || type === "number" || type === "email"
+        .input-wrap(class!=attributes.class)
+            .input-field
+                input(type=type, name=name, id=name, value=value, required)
+                label(for=name)=label
+            if js
+                block
+
+
+    else if type === 'select'
+        .input-wrap(class!=attributes.class)
+            .input-field
+                select(type=type, name=name, id=name, value=value, required)
+                    block
+                label(for=name)=label
+
+
+    else if type === 'checkbox'
+        .input-field.input-field--checkbox
+            input(type='checkbox', id=name, name=name, checked=value==='checked'?true:false)
+            label(for=name) !{label}

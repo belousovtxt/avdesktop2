@@ -1,0 +1,47 @@
+header.header
+  height: 100px
+  width: 100%
+  border-bottom: 1px solid rgba(255,255,255, .15)
+  color: $el-white
+  position: relative
+  z-index: 2
+  .container
+    display: flex
+    flex-flow: row nowrap
+    height: 100%
+    align-items: center
+
+  .header__logo
+    margin-right: 44px
+
+  .header__links
+    margin-left: -15px
+    margin-right: -15px
+    display: flex
+    flex-flow: row
+    align-items: center
+
+    &.header__links--right
+      margin-left: auto
+      margin-right: -9px
+      svg path
+        +transition
+      a
+        margin-left: 9px
+        margin-right: 9px
+
+    a
+      margin-left: 15px
+      margin-right: 15px
+      font-size: 15px
+      +transition
+      &:hover
+        color: $el-accent
+        svg path
+          fill: $el-accent
+
+      &.link--bordered
+        +transition
+        &:hover
+          color: $el-accent
+          border-bottom-color: $el-accent

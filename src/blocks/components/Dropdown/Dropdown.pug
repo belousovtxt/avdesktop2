@@ -1,0 +1,26 @@
+mixin Dropdown(type)
+    .dropdown.js-dropdown__select(data-dropdown=type)
+        if type==='city'
+            ul
+                li.item.js-dropdown__selectable.item--selected
+                    .item__content
+                        .main Пермь
+                        .description Пермский край
+                li.item.js-dropdown__selectable
+                    .item__content
+                        .main Пенза
+                        .description Пензенская область
+                li.item.js-dropdown__selectable
+                    .item__content
+                        .main Первомайск
+                        .description Николаевская область
+                li.item.js-dropdown__selectable
+                    .item__content
+                        .main Санкт-Петербург
+                        .description Ленинградская область
+        else if type==='date'
+            div#datepicker
+
+
+        else if type === 'people'
+            p количество людишек

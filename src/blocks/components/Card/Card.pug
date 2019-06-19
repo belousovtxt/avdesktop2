@@ -1,0 +1,12 @@
+mixin Card(isHaveHead=false, isHaveContent=false, isHaveFooter=false)
+    .card(class!=attributes.class)
+        if(isHaveHead)
+            .card__head
+                block card_head
+
+        if(isHaveContent)
+            .card__content
+                block card_content
+        if(isHaveFooter)
+            .card__footer
+                block card_footer

@@ -1,0 +1,9 @@
+mixin NewsItem(important)
+    .news-item(class=important?'news-item--important':null)
+        if important === true
+            .news-item__head Важно
+        else
+            .news-item__head 07 мая 2019
+        .news-item__title Внимание! Изменения в расписании Кунгурского направления
+        a(href="#").news-item__read-more Подробнее
+

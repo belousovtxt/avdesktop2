@@ -1,0 +1,5 @@
+mixin Button(title="Кнопка", type="link", href="#")
+    if type === "link"
+        a(href=href class!=attributes.class).btn=title
+    else
+        button(class!=attributes.class).btn=title

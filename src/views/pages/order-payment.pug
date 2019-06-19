@@ -1,0 +1,66 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Оплата билета на автобус Пермь - Березники"
+
+block content
+    +Head('default', '16 августа, 2 взрослых', undefined, true)
+        +Tabs(true, [{link: 'order-places.html', text: 'Выбор места', active: false}, {
+            link: 'order-people.html',
+            text: 'Оформление',
+            active: false
+        }, {link: 'order-payment.html', text: 'Оплата', active: true}]).head__tabs
+    +GridsContainer
+        block left
+            .card.card--default.card--payments
+                .card__head
+                    span Выберите способ оплаты
+
+                .card__content
+                    .payments__grid
+                        a(href="order-ticket.html").item
+                            .payment__icon
+                                include ../../img/svg/paytype-1-card-line.svg
+                            .payment__content
+                                span Банковской картой
+                                p Оплата банковской картой Visa, MasterCard или Mir. Оплата производится через платежный шлюз Сбербанка.
+
+                        a(href="order-ticket.html").item
+                            .payment__icon
+                                include ../../img/svg/paytype-3-phone-line.svg
+                            .payment__content
+                                span Оплата с телефона
+                                p Оплата со счета мобильного телефона. Оплата производится через сервис Яндекс.Касса.
+                    .card__footer
+                        include ../../img/svg/i-inf_places.svg
+                        p Вы будете перенаправлены в интерфейс платежной системы, все платежные данные надежно защищены. Необходимо успеть совершить оплату до истечения времени бронирования билета.
+
+
+
+        block right
+            .card.card--right-side.sticky
+                .ticket__dates.ticket__info
+                    +TicketDate('21:15', '16 августа', 'Пермь', 'Автовокзал "Пермь", улица Революции, 68')
+                    +TicketDate('00:45', '17 августа', 'Березники', 'Остановка "Советская площадь / нижний ЦУМ", улица Пятилетки, 40')
+                .ticket__info.ticket__info--other-info
+                    .item
+                        span.title Перевозчик:
+                        span.info Железов Д.В.
+                    .item
+                        span.title Автобус:
+                        span.info СЕТРА 49/0
+                .ticket__info.ticket__info--important
+                    span.important Необходим документ удостоверяющего личность
+                    span Билет можно не печатать
+                    span Регулярный рейс
+
+                .ticket__footer
+                    span.price 540 ₽
+                    .ticket__footer-brone Бронь 40 мин.
+                    span 2 билета по 270₽
+
+
+
+
+block scripts
+    script(src="js/main.js")

@@ -1,0 +1,14 @@
+
+
+mixin Header
+    header.header
+        .container
+            +HeaderLogo
+            .header__links
+                +Link("Поиск билетов", "index.html")
+                +Link("Автовокзалы")
+                +Link("Частые вопросы")
+            .header__links.header__links--right
+                +Link("Личный кабинет").link--bordered
+                +Link(title=null)
+                    include ../../../img/svg/ibtn-menu.svg

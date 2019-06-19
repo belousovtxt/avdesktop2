@@ -1,0 +1,41 @@
+.news-item
+  display: flex
+  background: $el-white
+  border: 1px solid $el-line-gray
+  flex-flow: column nowrap
+  padding: 25px 60px 30px 25px
+  height: 215px
+  align-items: flex-start
+  +border-radius
+  &.news-item--important
+    border-color: $el-accent
+    .news-item__head
+      +border-radius
+      background: $el-accent
+      color: $el-white
+      font-size: 12px
+      padding: 0 5px
+      height: 18px
+      display: inline-flex
+      align-items: center
+
+  .news-item__head
+    font-size: 12px
+    font-weight: 500
+    color: $txt-gray
+    height: 18px
+
+
+  .news-item__title
+    margin-top: 6px
+    color: $txt-dark
+    font-size: 18px
+    line-height: 140%
+    font-weight: 500
+
+  .news-item__read-more
+    margin-top: auto
+    color: $el-accent
+    font-size: 14px
+    font-weight: normal
+    border-bottom: 1px dashed rgba(255, 0, 0, 0.5)

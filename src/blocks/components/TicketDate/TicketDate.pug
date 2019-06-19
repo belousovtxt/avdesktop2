@@ -1,0 +1,8 @@
+mixin TicketDate(time='06:30', dop='4 ч. 0 мин. в пути', city='Пермь', station='Автовокзал "Пермь", улица Революции, 68')
+    .ticket__date
+        .ticket__date_time
+            span.time=time
+            span.dop=dop
+        .ticket__date_target
+            span.city=city
+            span.station=station

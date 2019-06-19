@@ -1,0 +1,124 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Оформление на автобус Пермь - Березники"
+
+block content
+    +Head('default', '16 августа, 2 взрослых', undefined, true)
+        +Tabs(true, [{link: 'order-places.html', text: 'Выбор места', active: false}, {
+            link: 'order-people.html',
+            text: 'Оформление',
+            active: true
+        }, {link: 'order-payment.html', text: 'Оплата', active: false}]).head__tabs
+    +GridsContainer
+        block left
+            .card.card-half-inputs.card--people.card--default
+                .card__head
+                    span Пассажир №1
+                    .action.action--fill
+                        include ../../img/svg/i-block-user.svg
+                        | Заполнить
+                .card__content
+                    .inputs
+                        +Input('text', 'lastname_1', 'Фамилия', 'Смирнов')
+                        +Input('text', 'name_1', 'Имя', 'Андрей')
+                        +Input('text', 'secondname_1', 'Отчество', 'Викторович')
+                        +Input('text', 'birthday_1', 'Дата рождения', '01.12.1980')
+                        +Input('select', 'male_1', 'Пол', 'Мужской')
+                            option(value='Мужской') Мужской
+                            option(value='Женский') Женский
+                        +Input('select', 'country_1', 'Гражданство', 'Россия')
+                            option(value="Россия") Россия
+                            option(value="Украина") Украина
+                            option(value="Беларусь") Беларусь
+                        +Input('select', 'doc_1', 'Документ', 'Паспорт')
+                            option(value="Паспорт") Паспорт
+                            option(value="ИНН") ИНН
+                            option(value="Полис") Полис
+                        +Input('text', 'serial_1', 'Номер документа', 'Серия и номер: 10 цифр')
+
+                    .card--people__selected-place
+                        .place
+                            span.place-n 5
+                            span.desc Место пассажира в салоне
+                        a(href="#").card--people__reselect-place Изменить
+            .card.card-half-inputs.card--people.card--default
+                .card__head
+                    span Пассажир №2
+                    .action.action--fill
+                        include ../../img/svg/i-block-user.svg
+                        | Заполнить
+                .card__content
+                    .inputs
+                        +Input('text', 'lastname_2', 'Фамилия', '')
+                        +Input('text', 'name_2', 'Имя', '')
+                        +Input('text', 'secondname_2', 'Отчество', '')
+                        +Input('text', 'birthday_2', 'Дата рождения', '')
+                        +Input('select', 'male_2', 'Пол', 'Мужской')
+                            option(value='Мужской') Мужской
+                            option(value='Женский') Женский
+                        +Input('select', 'country_2', 'Гражданство', 'Россия')
+                            option(value="Россия") Россия
+                            option(value="Украина") Украина
+                            option(value="Беларусь") Беларусь
+                        +Input('select', 'doc_2', 'Документ', 'Паспорт')
+                            option(value="Паспорт") Паспорт
+                            option(value="ИНН") ИНН
+                            option(value="Полис") Полис
+                        +Input('text', 'serial_2', 'Номер документа', 'Серия и номер: 10 цифр')
+
+                    .card--people__selected-place
+                        .place
+                            span.place-n 6
+                            span.desc Место пассажира в салоне
+                        a(href="#").card--people__reselect-place Изменить
+
+
+
+
+
+
+
+            .card.card--default.card-half-inputs.card--contact-info
+                .card__head
+                    span Контактные данные
+
+                .card__content
+                    .inputs
+                        +Input('text', 'email', 'E-mail', 'smirnovandreyshow@gmail.com')
+                        +Input('text', 'phone', 'Телефон', '+7 902 616-42-64')
+
+                    .agreements
+                        +Input('checkbox', 'agreement_return', 'Ознакомлен и согласен с правилами <a href="#">покупки и возврата</a> электронного билета', 'checked')
+                        +Input('checkbox', 'agreement_data', 'Даю своё согласие на обработку <a href="#">персональных данных</a>' )
+
+
+
+            +Button("Купить билет", 'link', 'order-payment.html').container--grids__action
+
+        block right
+            .card.card--right-side.sticky
+                .ticket__dates.ticket__info
+                    +TicketDate('21:15', '16 августа', 'Пермь', 'Автовокзал "Пермь", улица Революции, 68')
+                    +TicketDate('00:45', '17 августа', 'Березники', 'Остановка "Советская площадь / нижний ЦУМ", улица Пятилетки, 40')
+                .ticket__info.ticket__info--other-info
+                    .item
+                        span.title Перевозчик:
+                        span.info Железов Д.В.
+                    .item
+                        span.title Автобус:
+                        span.info СЕТРА 49/0
+                .ticket__info.ticket__info--important
+                    span.important Необходим документ удостоверяющего личность
+                    span Билет можно не печатать
+                    span Регулярный рейс
+
+                .ticket__footer
+                    span.price 540 ₽
+                    span 2 билета по 270₽
+
+
+
+
+block scripts
+    script(src="js/main.js")

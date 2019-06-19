@@ -1,0 +1,14 @@
+extends layouts/default
+
+block variables
+	- const title = "Главная"
+
+block content
+	+SectionSearch
+	+SectionNews
+	+SectionDownload
+	+SectionMap
+
+
+block scripts
+	script(src="js/main.js")

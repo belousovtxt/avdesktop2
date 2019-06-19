@@ -1,0 +1,50 @@
+.btn
+  display: inline-flex
+  height: 64px
+  background: $el-accent
+  color: $el-white
+  text-align: center
+  justify-content: center
+  align-items: center
+  font-size: 15px
+  font-weight: 500
+  padding: 0 16px
+  cursor: pointer
+  +btn-shadow
+  +border-radius
+
+  &.btn--action
+    height: 38px
+    background: transparent
+    border: 1px solid $el-line-gray
+    @include border-radius
+    text-transform: uppercase
+    color: $el-accent
+    font-weight: 500
+    font-size: 12px
+    line-height: 15px
+    padding-left: 20px
+    padding-right: 20px
+    box-shadow: none
+
+  &.btn--white
+    color: $el-accent
+    background: $el-white
+    width: 250px
+
+
+
+/*  In order-ticket.html  */
+.t-order__buttons
+  display: flex
+  flex-flow: row nowrap
+  width: 82.905%
+  .btn
+    width: 33.3333%
+    &:nth-child(2)
+      margin-left: 20px
+      margin-right: 20px
+    span
+      margin-left: auto
+      margin-right: auto
+

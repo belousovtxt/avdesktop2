@@ -1,0 +1,7 @@
+//eslint-disable-next-line
+mixin Link(title="Заголовок", link="#")
+    a(href=link, class!=attributes.class)
+        if block
+            block
+        else
+            =title

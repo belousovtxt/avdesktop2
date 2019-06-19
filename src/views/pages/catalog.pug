@@ -1,0 +1,13 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Билеты на автобус Пермь - Березники"
+
+block content
+    +Head('catalog')
+    +TicketGrid
+
+
+
+block scripts
+    script(src="js/main.js")

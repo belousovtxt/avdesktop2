@@ -1,0 +1,7 @@
+mixin Tabs(progress=false, tabs=[])
+    .tabs(class!=attributes.class)
+        each tab, i in tabs
+            a(href=tab.link, class!=tab.active?'tab--active': null).tab=tab.text
+            if (progress) && (tabs.length != (i+1))
+                .tab__progress
+                    include ../../../img/svg/i-arrow-progress.svg

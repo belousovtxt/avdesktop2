@@ -1,0 +1,20 @@
+mixin SectionSearch
+    section#search
+        .container
+            h1 Автовокзалы Прикамья
+            p Купить билеты на автобус по Пермскому<br/>краю удобно, выгодно и быстро
+            div.form__search
+                .inputs
+                    +Input("text", "from", "Откуда", "Пермь", true).search__from
+                        +Dropdown('city')
+
+                    .inputs__switcher
+                        include ../../../img/svg/i-rotate.svg
+                    +Input('text', 'to', 'Куда', "Березники", true).search__to
+                        +Dropdown('city')
+                    +Input('text', 'date', 'Дата', "16 августа", true).search__date
+                        +Dropdown('date')
+                    +Input('text', 'passenger', 'Пассажиры', "1 взрослый", true).search__passengers
+                        +Dropdown('people')
+                +Button("Найти рейс", 'link', 'catalog.html')
+

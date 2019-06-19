@@ -1,0 +1,50 @@
+mixin Ticket(type='default')
+    .ticket(class!=attributes.class)
+        .ticket__default-info
+            .ticket__info
+                +TicketDate
+                +TicketDate('10:30', '16 августа', 'Березники', 'Остановка "Советская площадь / нижний ЦУМ", улица Пятилетки, 40')
+                .ticket__other-info
+                    .item
+                        span.title Перевозчик:
+                        span.info Железов Д.В.
+                    .item
+                        span.title Автобус:
+                        span.info СЕТРА 49/0
+            .ticket__buy
+                .ticket__buy-price 405 ₽
+                if type === 'default'
+                    +Button("Купить", 'link', 'order-places.html')
+                else if type === 'order'
+                    .ticket__buy-num 2 билета
+                    +Label('payed')
+        if type === 'order'
+            .ticket__dop-info.ticket__dop-info--o-info
+                .left
+                    h5 Информация о рейсе
+                .right
+                    ul
+                        li.important Необходим документ удостоверяющего личность
+                        li Билет можно не печатать
+                        li Регулярный рейс
+            .ticket__dop-info.ticket__dop-info--p-info
+                .left
+                    .place Место 34
+                    span Пассажир №1
+                .right
+                    ul
+                        li Смирнов Андрей Викторович
+                            span Муж. / 01.12.1980 / Российская Федерация / 59 18 723541
+            .ticket__dop-info.ticket__dop-info--p-info
+                .left
+                    .place Место 35
+                    span Пассажир №2
+                .right
+                    ul
+                        li Смирнова Ирина Сергеевна
+                            span Жен. / 21.04.1985 / Российская Федерация / 59 14 473472
+
+
+
+
+

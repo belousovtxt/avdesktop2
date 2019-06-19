@@ -1,0 +1,36 @@
+mixin Head(type='default', subtitle='Билеты на автобус', title='Пермь – Березники', back=false)
+    section.head(class!=attributes.class)
+        .container
+            .head__title
+                .head__title__content
+                    if back
+                        .subtitle
+                            a(href="#").back
+                                include ../../../img/svg/ibtn-back.svg
+                            span=subtitle
+                    else
+                        span=subtitle
+
+                    h1=title
+                if(type === 'catalog')
+                    .head__title__action сортировка
+
+            .head__content
+                if block
+                    block
+                else if (type=='catalog')
+                    div.form__search
+                        .inputs
+                            +Input('text', 'from', 'Откуда', 'Пермь', true).search__from.w-270
+                                +Dropdown('city')
+
+                            .inputs__switcher
+                                include ../../../img/svg/i-rotate.svg
+                            +Input('text', 'to', 'Куда', "Березники", true).search__to.w-270
+                                +Dropdown('city')
+                            +Input('text', 'date', 'Дата', "16 августа", true).search__date.w-170
+                                +Dropdown('date')
+                            +Input('text', 'passenger', 'Пассажиры', "1 взрослый", true).search__passengers.w-170
+                                +Dropdown('people')
+                            +Button("Найти рейс").w-170
+

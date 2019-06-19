@@ -1,0 +1,32 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Оплата билета на автобус Пермь - Березники"
+
+block content
+    +Head('default', 'Заказ №573985')
+    .container
+        +Ticket('order').ticket--default.ticket--order
+
+
+        .t-order__buttons
+            a(href="#").btn
+                .icon
+                    include ../../img/svg/i-menu-search.svg
+                span Купить такой же
+            a(href="#").btn.btn--white
+                .icon
+                    include ../../img/svg/i-download.svg
+                span Скачать
+            a(href="#").btn.btn--white
+                .icon
+                    include ../../img/svg/i-return-ticket.svg
+                span Вернуть билет
+
+
+
+
+
+
+block scripts
+    script(src="js/main.js")
