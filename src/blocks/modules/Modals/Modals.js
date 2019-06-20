@@ -1,13 +1,5 @@
-modules.define('Modals', ['i-bem-dom'], function(provide, bemDom) {
+import $ from 'jquery';
+import "jquery-ui/ui/widgets/tabs"
+import 'jquery-modal'
 
-provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-        js: {
-            inited: function() {
-                
-            }
-        }
-    }
-}));
-
-});
+$("#tabs").tabs();
