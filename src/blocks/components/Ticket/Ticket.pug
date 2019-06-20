@@ -1,23 +1,24 @@
 mixin Ticket(type='default')
     .ticket(class!=attributes.class)
-        .ticket__default-info
-            .ticket__info
-                +TicketDate
-                +TicketDate('10:30', '16 августа', 'Березники', 'Остановка "Советская площадь / нижний ЦУМ", улица Пятилетки, 40')
-                .ticket__other-info
-                    .item
-                        span.title Перевозчик:
-                        span.info Железов Д.В.
-                    .item
-                        span.title Автобус:
-                        span.info СЕТРА 49/0
-            .ticket__buy
-                .ticket__buy-price 405 ₽
-                if type === 'default'
-                    +Button("Купить", 'link', 'order-places.html')
-                else if type === 'order'
-                    .ticket__buy-num 2 билета
-                    +Label('payed')
+        if type === 'default' || type === 'order'
+            .ticket__default-info
+                .ticket__info
+                    +TicketDate
+                    +TicketDate('10:30', '16 августа', 'Березники', 'Остановка "Советская площадь / нижний ЦУМ", улица Пятилетки, 40')
+                    .ticket__other-info
+                        .item
+                            span.title Перевозчик:
+                            span.info Железов Д.В.
+                        .item
+                            span.title Автобус:
+                            span.info СЕТРА 49/0
+                .ticket__buy
+                    .ticket__buy-price 405 ₽
+                    if type === 'default'
+                        +Button("Купить", 'link', 'order-places.html')
+                    else if type === 'order'
+                        .ticket__buy-num 2 билета
+                        +Label('payed')
         if type === 'order'
             .ticket__dop-info.ticket__dop-info--o-info
                 .left
@@ -44,6 +45,7 @@ mixin Ticket(type='default')
                         li Смирнова Ирина Сергеевна
                             span Жен. / 21.04.1985 / Российская Федерация / 59 14 473472
 
+        if type === 'history'
 
 
 

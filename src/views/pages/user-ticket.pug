@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Личный кабинет"
+
+block content
+    +Head('default', 'Смирнов Андрей Викторович', 'Личный кабинет')
+        +Tabs(false, [{link: 'user-ticket.html', text: 'Ваши билеты', active: true}, {
+            link: 'user-data.html',
+            text: 'Данные пользователя',
+            active: false
+        }]).head__tabs
+
+    .container
+        +Ticket("history").ticket--default
+        +Ticket("history").ticket--default
+        +Ticket("history").ticket--default
+        +Ticket("history").ticket--default
+
+
+block scripts
+    script(src="js/main.js")
