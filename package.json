@@ -69,6 +69,7 @@
         "jquery-modal": "^0.9.2",
         "jquery-ui": "^1.12.1",
         "jquery-ui-bundle": "^1.12.1-migrate",
+        "owl.carousel": "^2.3.4",
         "smart-grid": "^2.1.2"
     }
 }

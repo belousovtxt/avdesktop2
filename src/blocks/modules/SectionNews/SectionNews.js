@@ -1,13 +1,10 @@
-modules.define('SectionNews', ['i-bem-dom'], function(provide, bemDom) {
+import $ from 'jquery'
+import 'owl.carousel'
 
-provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-        js: {
-            inited: function() {
-                
-            }
-        }
-    }
-}));
-
+$(function () {
+    $(".owl-carousel").owlCarousel({
+        items: 3,
+        margin: 30,
+        nav: true
+    });
 });

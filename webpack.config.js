@@ -1,6 +1,8 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
+
     entry: {
         main: "./src/js/index.js"
     },
@@ -8,6 +10,8 @@ module.exports = {
     output: {
         filename: "[name].js"
     },
+
+
 
     module: {
         rules: [
@@ -18,18 +22,24 @@ module.exports = {
                     loader: "babel-loader",
                     query: {
                         presets: [
-                            ["@babel/preset-env", { modules: false }]
+                            ["@babel/preset-env", {modules: false}]
                         ]
                     }
                 }
+            },
+            {
+
             }
-        ]
+        ],
+
     },
 
     resolve: {
         alias: {
             "%modules%": path.resolve(__dirname, "src/blocks/modules"),
-            "%components%": path.resolve(__dirname, "src/blocks/components")
+            "%components%": path.resolve(__dirname, "src/blocks/components"),
+            jquery: 'jquery/src/jquery'
         }
     }
 };
+

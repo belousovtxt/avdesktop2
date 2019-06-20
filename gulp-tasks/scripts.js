@@ -17,6 +17,7 @@ const webpackConfig = require("../webpack.config.js"),
 webpackConfig.mode = production ? "production" : "development";
 webpackConfig.devtool = production ? false : "source-map";
 
+
 gulp.task("scripts", () => {
     return gulp.src(paths.scripts.src)
         .pipe(webpackStream(webpackConfig), webpack)

@@ -7,9 +7,11 @@ mixin SectionNews
                     a(href="#").btn.btn--action Все новости
 
 
-            .row
-                .arr.arr-left
-                .arr.arr-right
+            .owl-carousel
                 +NewsItem(true)
+                +NewsItem
+                +NewsItem
+                +NewsItem
+                +NewsItem
                 +NewsItem
                 +NewsItem
