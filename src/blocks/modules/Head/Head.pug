@@ -11,9 +11,10 @@ mixin Head(type='default', subtitle='Билеты на автобус', title='�
                     else
                         span=subtitle
 
-                    h1=title
+                    h1(class!=type==='article'?"head__article":null)=title
                 if(type === 'catalog')
-                    .head__title__action сортировка
+                    .head__title__action
+                        +DropdownSort
 
             .head__content
                 if block

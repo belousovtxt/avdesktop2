@@ -23,4 +23,16 @@ mixin Dropdown(type)
 
 
         else if type === 'people'
-            p количество людишек
+            ul
+                li.item
+                    .item__content
+                        .main Взрослых
+
+                    +Stepper
+
+                li.item
+                    .item__content
+                        .main Детей
+                        .description до 12 лет
+
+                    +Stepper

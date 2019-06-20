@@ -2,13 +2,55 @@
 
 mixin Header
     header.header
-        .container
-            +HeaderLogo
-            .header__links
-                +Link("Поиск билетов", "index.html")
-                +Link("Автовокзалы")
-                +Link("Частые вопросы")
-            .header__links.header__links--right
-                +Link("Личный кабинет").link--bordered
-                +Link(title=null)
-                    include ../../../img/svg/ibtn-menu.svg
+        .header__min
+            .container
+                +HeaderLogo
+                .header__links.header--on-default
+                    +Link("Поиск билетов", "index.html")
+                    +Link("Автовокзалы")
+                    +Link("Частые вопросы")
+
+                form.header__search.header--on-white
+                    +Input("text", "global-search__value", "Поиск по сайту")
+                    button.btn(type="submit")
+                        include ../../../img/svg/i-menu-search.svg
+
+
+                .header__links.header__links--right
+                    +Link("Личный кабинет", "#login-form")(rel="modal:open").link--bordered
+                    +Link('').icon-menu.js-toggle-menu
+
+        .header__big.header--on-white
+            .container
+                .header__col.header__col-links
+                    p Меню
+                    a(href="#") Поиск билетов
+                    a(href="#") Автовокзалы
+                    a(href="#") Частные вопросы
+                    a(href="#") Новости
+                    a(href="#") Контакты и услуги
+                    a(href="#") Наши партнеры
+                .header__col.header__col-links
+                    p Пассажирам
+                    a(href="#") Возврат билетов
+                    a(href="#") Обратная связь
+                    a(href="#") Справочная информация
+                    a(href="#") Расписание электропоездов
+                    a(href="#") Информация по безопасности
+                    a(href="#") Политика конфиденциальности
+                .header__col.header__col-last
+                    .header__col-item
+                        p Техподдержка
+                        a(href="mailto:").link--bordered help@av-prikamie.ru
+                    .header__col-item
+                        p Мобильные приложения
+                        .header__col-buttons
+                            a(href="#").btn.btn--google
+                                span
+                                include ../../../img/svg/i-google-play.svg
+                                | Google Play
+                            a(href="#").btn.btn--google
+                                span
+                                include ../../../img/svg/i-app-store.svg
+                                | App Store
+

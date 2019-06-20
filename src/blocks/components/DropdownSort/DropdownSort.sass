@@ -1,0 +1,73 @@
+.dropdown__sort
+  position: relative
+
+  .dropdown__sort--selected
+    height: 38px
+    background: transparent
+    border: 1px solid rgba(#FFFFFF, .15%)
+    +border-radius
+    align-items: center
+    font-weight: 500
+    font-size: 12px
+    color: $el-white
+    position: relative
+    text-transform: uppercase
+    display: flex
+    padding-left: 15px
+    cursor: pointer
+    width: 170px
+
+    &::before
+      content: ' '
+      position: absolute
+      right: 16px
+      background: url("../img/sprites/intermediate-svg/i-arrow-select-white.svg") center no-repeat
+      width: 10px
+      height: 6px
+
+  .dropdown__sort--items
+    display: none
+    margin-top: 2px
+    //display: flex
+    flex-flow: column nowrap
+    +border-radius
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.3)
+    background: $el-white
+    color: $txt-dark
+    overflow: hidden
+    position: absolute
+    width: 210px
+    z-index: 200
+    right: 0
+
+    &.dropdown__sort--opened
+      display: flex
+
+    .item
+      height: 46px
+      display: flex
+      align-items: center
+      padding: 0 16px
+      font-size: 14px
+      font-weight: 500
+      border-bottom: 1px solid $el-line-gray
+      position: relative
+      cursor: pointer
+
+      &::before
+        content: ' '
+        position: absolute
+        right: 16px
+        background: url("../img/sprites/intermediate-svg/i-sort.svg")
+        width: 7px
+        height: 10px
+        opacity: 0
+
+      &.item--selected
+        background: $el-select
+        &::before
+          opacity: 1
+
+      &:last-child
+        border-bottom: none
+

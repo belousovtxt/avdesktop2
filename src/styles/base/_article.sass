@@ -1,0 +1,137 @@
+.article__page
+  width: 66.666%
+  margin-top: 40px
+  p.descriptor
+    font-size: 24px
+    line-height: 145%
+    color: $txt-dark
+    margin-top: 0
+    margin-bottom: 20px
+  p
+    line-height: 170%
+    font-size: 16px
+    color: $txt-dark
+    margin-bottom: 15px
+    margin-top: 0
+
+  a
+    color: $el-accent
+
+  img
+    width: 100%
+    height: auto
+    margin-top: 5px
+    margin-bottom: 30px
+
+  ul, ol
+    line-height: 170%
+    padding-left: 55px
+    margin-top: 0
+    margin-bottom: 0
+    li
+      margin-bottom: 10px
+
+  ol
+    counter-reset: myCounter
+    li
+      list-style: none
+      position: relative
+      &::before
+        counter-increment: myCounter
+        content: counter(myCounter)'.'
+        color: $el-accent
+        position: absolute
+        left: -40px
+        font-size: 16px
+        text-align: right
+        width: 32px
+
+
+
+
+  ul
+    list-style: none
+    li
+      position: relative
+      &::before
+        content: ' '
+        position: absolute
+        top: 6px
+        left: -28px
+        background: $el-accent
+        width: 6px
+        height: 6px
+        border-radius: 6px
+
+  h2
+    font-weight: bold
+    font-size: 28px
+    color: $txt-dark
+
+  h3
+    font-size: 24px
+    font-weight: bold
+
+  h4
+    font-size: 18px
+    font-weight: bold
+
+
+  blockquote
+    +border-radius
+    background: $el-select
+    box-shadow: inset 4px 0px 0px #F6175A
+    padding: 34px 40px 24px 45px
+    margin: 0 100px 30px 0
+
+    p
+      margin: 0
+      padding: 0
+      font-size: 18px
+      line-height: 170%
+      color: $txt-dark
+
+  table
+    width: 100%
+    border: 1px solid $el-line-gray
+    border-top-left-radius: 6px
+    border-top-right-radius: 6px
+    padding: 0
+    border-spacing: 0
+    margin: 0 0 30px
+
+    tr
+
+      display: flex
+      justify-content: space-between
+      border-bottom: 1px solid $el-line-gray
+      &:last-child
+        border-bottom: none
+
+    th
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      min-height: 62px
+      flex: 1
+      border-right: 1px solid $el-line-gray
+      &:last-child
+        border-right: none
+
+    td
+      flex: 1
+      border-right: 1px solid $el-line-gray
+      padding: 20px 26px
+      display: inline-flex
+      align-items: center
+
+      font-size: 16px
+      line-height: 140%
+      color: $txt-dark
+
+      &:last-child
+        border-right: none
+
+
+
+

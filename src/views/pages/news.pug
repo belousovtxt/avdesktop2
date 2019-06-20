@@ -1,0 +1,32 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Новости и объявления"
+
+block content
+    +Head('default', 'Для пассажиров', 'Новости и объявления')
+    .container
+        .news__container
+            +NewsItem(true)
+            +NewsItem
+            +NewsItem
+
+            +NewsItem
+            +NewsItem
+            +NewsItem
+
+            +NewsItem
+            +NewsItem
+            +NewsItem
+    .container.container--news
+        a(href="#").btn.btn--white.btn--icon.btn--news-load
+            .icon
+                include ../../img/svg/i-reload.svg
+            span Загрузить ещё
+
+
+
+
+
+block scripts
+    script(src="js/main.js")

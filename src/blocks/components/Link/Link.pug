@@ -1,6 +1,6 @@
 //eslint-disable-next-line
 mixin Link(title="Заголовок", link="#")
-    a(href=link, class!=attributes.class)
+    a(href=link)&attributes(attributes)
         if block
             block
         else
