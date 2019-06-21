@@ -1,0 +1,39 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Информация по безопасности перевозок"
+
+block content
+	+Head('default', 'Автовокзалы Прикамья', 'Обратная связь')
+	.container
+		.card.card--default.card--feedback
+			.card__head
+				span Хотите что-то спросить или предложить?
+				p Вы можете связаться с нами, заполнив и отправив данную форму. Ответ на ваше письмо будет отправлен на указанный вами электронный адрес. Для скорейшего ответа, пожалуйста, укажите тип письма.
+			.card__content
+				.inputs-three-in-row
+					+Input("text", "feedback_name", "Ваше имя")(important=true)
+					+Input("text", "feedback_email", "E-mail для связи")(important=true)
+					+Input("select", "feedback_type", "Тип запроса")(important=true)
+						option(value="Вопрос") Вопрос
+						option(value="Вопрос1") Вопрос
+						option(value="Вопрос2") Вопрос
+
+				+Input("textarea", "feedback__msg", "Ваш вопрос").input--textarea
+
+				+Input("captcha", "feedback_captcha", "Символы с картинки")(important=true)
+
+				.agreements
+					+Input('checkbox', 'agreement_data', 'Даю своё согласие на обработку <a href="#">персональных данных</a>' )
+					a(href="#message-sended" rel="modal:open").btn Отправить
+
+
+
+
+
+
+
+
+
+block scripts
+	script(src="js/main.js")

@@ -1,0 +1,85 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Частые вопросы"
+
+block content
+    +Head('default', 'Для пассажиров', 'Частые вопросы')
+    .container
+        .article__page
+            #accordion
+                h3 Как часто обновляется расписание на сайте?
+                div
+                    p
+                        | Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                        | ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                        | amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                        | odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                h3 Можно ли купить билет для другого человека?
+                div
+                    p Да, можно. При оформлении билетов вам необходимо ввести данные другого человека. Но это должны быть достоверные данные, иначе при посадке в автобус могут возникнуть проблемы.
+                h3 Какое время указано на сайте?
+                div
+                    p
+                        | Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                        | Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                        | ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                        | lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                    ul
+                        li List item one
+                        li List item two
+                        li List item three
+                h3 Что мне делать после покупки билета на сайте?
+                div
+                    p
+                        | Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                        | et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                        | faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                        | mauris vel est.
+                    p
+                        | Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                        | Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                        | inceptos himenaeos.
+                h3 Обязательно ли печатать электронный билет (маршрутную квитанцию)?
+                div
+                    p
+                        | Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                        | et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                        | faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                        | mauris vel est.
+                    p
+                        | Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                        | Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                        | inceptos himenaeos.
+                h3 Если я купил билет на сайте и хочу получить копию обычного билета, куда мне обратиться?
+                div
+                    p
+                        | Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                        | et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                        | faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                        | mauris vel est.
+                    p
+                        | Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                        | Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                        | inceptos himenaeos.
+                h3 У меня не получается оплатить билет банковской картой, что я делаю не так?
+                div
+                    p
+                        | Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                        | et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                        | faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                        | mauris vel est.
+                    p
+                        | Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                        | Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                        | inceptos himenaeos.
+
+        a(href="feedback.html").btn.btn--ask-question Задать свой вопрос
+
+
+
+
+
+
+block scripts
+    script(src="js/main.js")

@@ -1,39 +1,102 @@
 mixin Modals
 
-    form#login-form.modal
+    .modal#login-form
         .modal__head
             h2 Личный кабинет
 
-            <div id="tabs">
-            <ul>
-            <li><a href="#tabs-1">Nunc tincidunt</a></li>
-            <li><a href="#tabs-2">Proin dolor</a></li>
-            <li><a href="#tabs-3">Aenean lacinia</a></li>
-            </ul>
-            <div id="tabs-1">
-            <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
-            </div>
-            <div id="tabs-2">
-            <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-            </div>
-            <div id="tabs-3">
-            <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-            <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-            </div>
-            </div>
+            div#tabs
+                ul
+                    li
+                        a(href="#signin") Вход
+                    li
+                        a(href="#signup") Регистрация
 
-            +Tabs(false, [{link: '#login-form', text: 'Вход', active: true}, {
-                link: '#register-form',
-                text: 'Регистрация',
-                active: false
-            }])
+                div#signin
+                    .modal__content
+                        .modal__form
+                            +Input("text", "user_signin_login", "Логин")
+                            +Input("password", "user_signin_password", "Пароль")
+                            .modal__btn-group
+                                +Button("Войти", "link", "user-data.html")
+                                a(href="#signup").btn.btn--white.js-set-tab-signup Создать аккаунт
 
+                            .separator
+                            a(href="#remind", rel="modal:open").link__normal Забыли пароль?
+
+
+                div#signup
+                    .modal__content
+                        .modal__form
+                            .search__section-head
+                                span Данные пользователя
+                            .inputs
+                                +Input("text", "lastname_modal_signup", "Фамилия", "Смирнов")(important=true)
+                                +Input("text", "firstname_modal_signup", "Имя", "Андрей")(important=true)
+                                +Input("text", "middlename_modal_signup", "Отчество")(important=true)
+                                +Input("text", "phone_modal_signup", "Телефон", "+7 902 616-42-64")
+                            .search__section-head
+                                span Учетная запись
+                            +Input("text", "login_modal_signup", "Логин")(important=true)
+                            +Input("text", "email_modal_signup", "E-mail", "smirnovandreyshow@gmail.com")(important=true)
+                            .inputs
+                                +Input("password", "password_modal_signup", "Пароль")(important=true)
+                                +Input("password", "re-password_modal_signup", "Пароль еще раз" )(important=true)
+                            +Input("captcha", "captcha_modal_signup", "Символы с картинки")(important=true)
+                            +Input('checkbox', 'agreement_data', 'Даю своё согласие на обработку <a href="#">персональных данных</a>' )
+                            a(href="#account-created" rel="modal:open").btn.btn--full Зарегистрироваться
+
+    .modal#remind
+        .modal__head
+            h2 Восстановление доступа
+            p.descriptor Введите почту, которую вы указывали при регистрации. Мы вышлем на не данные для восстановления доступа.
         .modal__content
             .modal__form
-                +Input
-                +Input
-                .modal__btn-group
-                    +Button
-                    +Button.btn--white
-                hr
-                +Link()
+                +Input("text", "remind_email", "E-mail")
+            .modal__btn-group
+                a(href="#mail-sended", rel="modal:open").btn Восстановить
+                a(href="#login-form", rel="modal:open").btn.btn--white Отмена
+    .modal#delete-ticket
+        .modal__head
+            h2 Удалить билет
+            p.descriptor Запись о покупке будет удалена из вашего списка, восстановить ее будет нельзя.
+        .modal__content
+            .modal__btn-group
+                a(href="#", rel="modal:close").btn Удалить
+                a(href="#", rel="modal:close").btn.btn--white Отмена
+    .modal#mail-sended
+        .modal__head
+            h2 Письмо отправлено
+            p.descriptor Проверьте пожалуйста свою почту.
+        .modal__content
+            a(href="#" rel="modal:close").btn.btn--full OK
+
+    .modal#news-item
+        .modal__head
+            .head__label 16 апреля 2019
+            h2 Возобновление перевозок пассажиров на маршруте Пермь (АС Южная) – Машиностроитель
+        .modal__content
+            p С 16 апреля открыта предварительная продажа билетов на рейсы по маршруту АС Южная – Машиностроитель.
+            p Открытие остановочного комплекса было завершено в срок к 15 апреля, а теперь возобновляется автобусное сообщение.
+            p Время отправления с 05.05.19
+            p пн, вт, ср, чт, пт: <br/>
+                b 07:05; 11:05; 17:50;
+            p сб, вс: <br/>
+                b 08:05; 12:45; 16:15;
+    .modal#message-sended
+        .modal__head
+            h2 Сообщение отправлено
+            p.descriptor Спасибо за ваше сообщение, мы обработаем вашу заявку и обязательно с вами свяжемся.
+        .modal__content
+            a(href="#" rel="modal:close").btn.btn--full OK
+    .modal#saved-changes
+        .modal__head
+            h2 Изменения сохранены
+            p.descriptor Данные ваша учетной запись обновлены, теперь вы можете продолжить работу с системой.
+        .modal__content
+            a(href="#" rel="modal:close").btn.btn--full OK
+    .modal#account-created
+        .modal__head
+            h2 Аккаунт создан
+            p.descriptor Спасибо за регистрацию! Теперь вы можете продолжить работу с приложением.
+        .modal__content
+            a(href="#" rel="modal:close").btn.btn--full OK

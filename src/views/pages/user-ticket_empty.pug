@@ -1,0 +1,33 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Ваши билеты — Личный кабинет"
+
+block content
+    +Head('default', 'Смирнов Андрей Викторович', 'Личный кабинет')
+        +Tabs(false, [{link: 'user-ticket.html', text: 'Ваши билеты', active: true}, {
+            link: 'user-data.html',
+            text: 'Данные пользователя',
+            active: false
+        }]).head__tabs
+
+    .container
+        .card.card__t-empty
+            .icon
+                include ../../img/svg/icon-area.svg
+            .content
+                p Билетов нет
+                span Вы еще не покупали билетов, воспользуйтесь поиском рейсов.
+                a(href="index.html").link--bordered Найти рейс
+
+        a(href="#login-form" rel="modal:open").card.card__t-empty.card--with-arrow
+            .content
+                p Авторизуйтесь в приложении
+                span Возможно вы покупали билеты на сайте.
+
+
+
+
+
+block scripts
+    script(src="js/main.js")

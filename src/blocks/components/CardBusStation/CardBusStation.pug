@@ -1,0 +1,12 @@
+mixin CardBusStation(city, time)
+    a(href="station_page.html").card.card--default
+        .card__column
+            p=city
+        .card__column
+            .item
+                span Справочная служба:
+                p +7 (34258) 2-22-23
+            if time
+                .item
+                    span Режим работы:
+                    p с 6:00 до 18:30

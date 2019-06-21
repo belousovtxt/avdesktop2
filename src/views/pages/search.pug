@@ -1,0 +1,37 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Поиск"
+
+block content
+	+Head('search', 'Поиск по сайту', null)
+	.container
+		.container--search
+			.search__section-head
+				span Страницы сайта
+			+NewsItem(false, "Справочная информация")
+			+NewsItem(false, "Справочная информация")
+			+NewsItem(false, "Справочная информация")
+		.container--search
+			.search__section-head
+				span Новости, автовокзалы и прочие записи
+			+NewsItem(false, "Новости от 23 февраля 2019")
+			+NewsItem(false, "Автовокзалы")
+			+NewsItem(false, "Автовокзалы")
+
+			+NewsItem(false, "Новости от 23 февраля 2019")
+			+NewsItem(false, "Автовокзалы")
+			+NewsItem(false, "Автовокзалы")
+		.container--search
+			a(href="#").btn.btn--white.btn--icon.btn--search-load
+				.icon
+					include ../../img/svg/i-reload.svg
+				span Загрузить ещё
+
+
+
+
+
+
+block scripts
+	script(src="js/main.js")

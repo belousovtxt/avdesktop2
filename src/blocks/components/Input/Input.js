@@ -9,7 +9,9 @@ $(document).on("click", ".inputs__switcher", function (e) {
     let tempToVal = oldTo.val();
     oldFrom.val(tempToVal);
     oldTo.val(tempFromVal);
+});
 
-
-
+$(document).on("click", ".js-toggle-password", function (e) {
+    let elType = $(this).closest(".input-wrap").find("input");
+    elType.attr("type") === "password"?elType.attr("type", "text"):elType.attr("type", "password")
 });

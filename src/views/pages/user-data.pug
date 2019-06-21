@@ -1,0 +1,46 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Данные пользователя — Личный кабинет"
+
+block content
+    +Head('default', 'Смирнов Андрей Викторович', 'Личный кабинет')
+        +Tabs(false, [{link: 'user-ticket.html', text: 'Ваши билеты', active: false}, {
+            link: 'user-data.html',
+            text: 'Данные пользователя',
+            active: true
+        }]).head__tabs
+
+    .container
+        .container__user-data
+            .card.card-half-inputs.card--people.card--default
+                .card__head
+                    span Личные данные
+                .card__content
+                    .inputs
+                        +Input('text', 'userlogin', 'Логин', 'smirnovandreyshow')(disabled=true)
+                        +Input('text', 'useremail', 'E-mail', '')(important=true)
+                        +Input('text', 'usersurname', 'Фамилия', '')(important=true)
+                        +Input('text', 'userfirstname', 'Имя', '')(important=true)
+                        +Input('text', 'usermiddlename', 'Отчество', '')(important=true)
+                        +Input('text', 'userphone', 'Телефон', '')
+                    .card__header
+                        p Изменить пароль
+
+                    .inputs
+                        +Input('password', 'userlogin', 'Пароль', '')(important=true)
+                        +Input('password', 'userlogin', 'Пароль ещё раз', '')(important=true)
+
+                    a.btn(href="#saved-changes" rel="modal:open") Сохранить
+            +Card(true, true, false).card--places.card--separations.card--user-data--passengers-data
+                block card_head
+                    span Пассажиры
+
+                block card_content
+                   +CardPassengerData
+                   +CardPassengerData
+
+
+
+block scripts
+    script(src="js/main.js")

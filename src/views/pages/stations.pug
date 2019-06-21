@@ -1,0 +1,50 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Информация по безопасности перевозок"
+
+block content
+    +Head("with-map", "Автовокзалы Прикамья", "Автовокзалы и автостанции")
+        .head__map-search
+            p Введите название населенного пункта или выберите автовокзал из списка.
+            +Input("text", "global-search__value", "Поиск автовозкалов", '', true)
+                button.btn(type="submit")
+                    include ../../img/svg/i-menu-search.svg
+
+    .container
+        .stations__grid
+            +CardBusStation("Ашап", 1)
+            +CardBusStation("Барда", 1)
+            +CardBusStation("Березники", 1)
+
+            +CardBusStation("Березовка", 0)
+            +CardBusStation("Верещагино", 1)
+            +CardBusStation("Губаха", 1)
+
+            +CardBusStation("Добрянка", 0)
+            +CardBusStation("Краснокамск", 1)
+            +CardBusStation("Кудымкар", 1)
+
+            +CardBusStation("Кунгур", 1)
+            +CardBusStation("Пермь, Автовокзал", 1)
+            +CardBusStation("Пермь, Автостанция Южная", 1)
+
+            +CardBusStation("Пермь, Драмтеатр", 1)
+            +CardBusStation("Полазна", 1)
+            +CardBusStation("Рождественское", 1)
+
+            +CardBusStation("Северный Коммунар (ФСК)", 1)
+            +CardBusStation("Сива", 1)
+            +CardBusStation("Соколово", 1)
+
+
+
+
+
+
+
+
+
+
+block scripts
+    script(src="js/main.js")

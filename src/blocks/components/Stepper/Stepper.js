@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
 const STEPPER_MAX = 99;
-const STEPPER_MIN = 1;
+const STEPPER_MIN = 0;
 
 $(document).on("click", ".stepper__action", (function (e) {
         e.preventDefault();

@@ -172,3 +172,61 @@
         font-size: 15px
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1), 0px 2px 6px rgba(0, 0, 0, 0.15)
 
+  &.ticket--history
+    &:first-child
+      margin-top: 40px
+    .ticket__history-info
+      display: flex
+      flex-flow: column nowrap
+      align-items: flex-start
+      height: 100%
+      padding: 20px 0
+      p
+        margin-top: 0
+        font-size: 24px
+        font-weight: 500
+        margin-bottom: 0
+        color: $txt-dark
+      span
+        font-size: 12px
+        font-weight: 500
+        margin-top: 6px
+        color: $txt-gray
+      a.link--bordered
+        color: $el-accent
+        border-bottom-color: $el-accent
+        font-size: 14px
+        margin-top: auto
+
+    .ticket__other-info
+      margin-left: auto
+      flex-flow: column wrap
+      flex-wrap: wrap !important
+      height: 86px
+      margin-right: 16px
+      width: 247px
+
+      .item
+        width: 115px
+        &:nth-child(2n)
+          margin-bottom: 0
+
+    .ticket__buy
+      padding-top: 20px
+      padding-bottom: 20px
+      .ticket__buy-num
+        font-size: 12px
+        color: $txt-gray
+        font-weight: 500
+        margin-top: 6px
+        height: 18px
+
+      .label
+        margin-top: 14px
+
+      .ticket__buy-action
+        position: absolute
+        top: 20px
+        right: 24px
+
+

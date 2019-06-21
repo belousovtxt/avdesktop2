@@ -1,0 +1,41 @@
+.stations__grid
+  display: flex
+  flex-flow: row wrap
+  margin-left: -15px
+  margin-right: -15px
+  margin-top: 40px
+  .card
+    display: flex
+    flex-flow: row nowrap
+    width: calc(33.333% - 30px)
+    height: 140px
+    align-items: flex-start
+    p
+      margin-top: 0
+      margin-bottom: 0
+
+    .card__column:first-child
+      color: $el-accent
+      font-size: 18px
+      line-height: 22px
+      font-weight: 500
+      width: 160px
+
+    .card__column:last-child
+      width: 142px
+      margin-left: auto
+      font-size: 12px
+      font-weight: 500
+      line-height: 146%
+      span
+        color: $txt-gray
+
+      p
+        color: #202A3C
+
+      .item
+        margin-bottom: 15px
+
+
+    margin-left: 15px
+    margin-right: 15px

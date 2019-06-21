@@ -1,10 +1,40 @@
-mixin DropdownSort
-    .dropdown__sort
-        .dropdown__sort--selected Сортировка
+mixin DropdownSort(type)
+    if type !== 'newsSort'
+        .dropdown__sort
+            .dropdown__sort--selected Сортировка
 
-        .dropdown__sort--items
-            .item.item--selected Стоимость
-            .item Время отправления
-            .item Время прибытия
-            .item Время в пути
+            .dropdown__sort--items
+                .item.item--selected Стоимость
+                .item Время отправления
+                .item Время прибытия
+                .item Время в пути
+    else
+        .dropdown__sort.dropdown__sort--news
+            .dropdown__sort--selected
+                span Фильтр по дате
+                | Актуальное
+
+            .dropdown__sort--items
+                .only-months__head
+                    .arr-left
+                        include ../../../img/svg/i-arrow_date-left.svg
+                    span 2019
+                    .arr-right
+                        include ../../../img/svg/i-arrow_date-right.svg
+
+                .only-months__items
+                    .item Январь
+                    .item Февраль
+                    .item Март
+                    .item Апрель
+                    .item Май
+                    .item Июнь
+                    .item Июль
+                    .item Август
+                    .item Сентябрь
+                    .item Октябрь
+                    .item Ноябрь
+                    .item Декабрь
+
+
 

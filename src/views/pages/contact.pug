@@ -1,0 +1,88 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Информация по безопасности перевозок"
+
+block content
+	+Head('default', 'Автовокзалы Прикамья', 'Контакты и услуги')
+	.container
+		.article__page
+			h2 Размещение рекламы
+			.card.card--default.card__contact
+				.card__head
+					span Размещение рекламы на чековой ленте
+				.card__content
+					.card__column
+						span Телефоны
+						a(href="tel:").link--default +7 902 47-65-216;
+						a(href="tel:").link--default +7 (342) 249-40-45
+					.card__column
+						span E-mail
+						a(href="mailto:") reklama@av-prikamie.ru
+			.card.card--default.card__contact
+				.card__head
+					span Размещение рекламы на сайте avperm.ru
+				.card__content
+					.card__column
+						span Телефоны
+						a(href="tel:").link--default +7 902 64-23-015
+					.card__column
+						span E-mail
+						a(href="mailto:") kars@av-prikamie.ru
+			h2 Аренда площадей
+			.card.card--default.card__contact
+				.card__head
+					span Сдача в аренду площадей автовокзалов, автостанций, кассовых пунктов
+				.card__content
+					.card__column
+						span Телефоны
+						a(href="tel:").link--default +7 902 47-65-216;
+						a(href="tel:").link--default +7 (342) 249-40-45
+					.card__column
+						span E-mail
+						a(href="mailto:") arenda@av-prikamie.ru
+			.card.card--default.card__contact
+				.card__head
+					span Сейчас сдается
+				.card__content
+						.card__row
+							.card__column
+								span Автовокзалы
+								p с. Березовка
+							.card__column
+								span Объекты
+								p — место для продажи сопутствующих товаров;
+								p — место для банкомата, платежного терминала, вендинговых аппаратов;
+						.card__row
+							.card__column
+								span Автовокзалы
+								p с. Губаха
+							.card__column
+								span Объекты
+								p — 4 м2 для оказания услуг общественного питания, продажа сопутствующих товаров;
+								p — место для банкомата, платежного терминала, вендингового аппарата;
+						.card__row
+							.card__column
+								span Автовокзалы
+								p Пермь, Ижевская, 2
+							.card__column
+								span Объекты
+								p — Торговое место для продажи газет, журналов, сопутствующих товаров, продовольственных и непродовольственных товаров
+
+			a(href="#login-form" rel="modal:open").card.card__t-empty.card--with-arrow.card__c-empty
+				.content
+					p Другие автовокзалы
+					span Контакты всех автовокзалов можно найти в соответствующем разделе.
+
+			a(href="#login-form" rel="modal:open").card.card__t-empty.card--with-arrow.card__c-empty
+				.content
+					p Обратная связь
+					span Вы можете задать вопрос через форму обратной связи на сайте.
+
+
+
+
+
+
+block scripts
+	script(src="js/main.js")

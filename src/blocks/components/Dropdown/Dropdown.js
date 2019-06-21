@@ -7,6 +7,9 @@ $(document).on("click", ".input-wrap", function (e) {
     e.preventDefault();
     let mainEl = $(this);
 
+    $(document).find("js-dropdown--opened").find(".dropdown").fadeOut();
+    $(document).find("js-dropdown--opened").removeClass("js-dropdown--opened");
+
     if ($(this).find(".dropdown").length) {
         if (!$(this).hasClass("js-dropdown--opened")) {
             // Dropdown is HIDDEN
@@ -27,6 +30,7 @@ $(document).on("click", ".input-wrap", function (e) {
         } else {
             // Dropdown is OPEN
             // console.log("drop is open");
+
         }
     }
 });
@@ -58,4 +62,21 @@ $(document).on("stepper-update", function (e, selector) {
         }
     }
 
+});
+
+$(document).mouseup(function (e){ // событие клика по веб-документу
+    var div = $(".dropdown"); // тут указываем ID элемента
+    if (!div.is(e.target) // если клик был не по нашему блоку
+        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+        div.fadeOut(); // скрываем его
+        div.closest(".js-dropdown--opened").removeClass("js-dropdown--opened")
+    }
+});
+$(document).mouseup(function (e){ // событие клика по веб-документу
+    var div = $(".dropdown__sort--items"); // тут указываем ID элемента
+    if (!div.is(e.target) // если клик был не по нашему блоку
+        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+          div.removeClass("dropdown__sort--opened");
+
+    }
 });

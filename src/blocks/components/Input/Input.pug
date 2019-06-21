@@ -4,10 +4,17 @@ mixin Input(type, name, label, value, js)
     - var label = label || 'Label';
     - var value = value || '';
     if type === "text" || type === "password" || type === "number" || type === "email"
-        .input-wrap(class!=attributes.class)
+        .input-wrap(class!=attributes.class class=attributes.disabled?'input--disabled':null)
             .input-field
-                input(type=type, name=name, id=name, value=value, required)
+                input(type=type name=name id=name value=value required readonly!=attributes.disabled)
+
                 label(for=name)=label
+                    if attributes.important
+                        font(color="#F6175A") &nbsp;*
+            if type==="password"
+                span.js-toggle-password
+
+
             if js
                 block
 
@@ -19,9 +26,36 @@ mixin Input(type, name, label, value, js)
                 select(type=type, name=name, id=name, value=value, required)
                     block
                 label(for=name)=label
+                    if attributes.important
+                        font(color="#F6175A") &nbsp;*
 
 
     else if type === 'checkbox'
         .input-field.input-field--checkbox
             input(type='checkbox', id=name, name=name, checked=value==='checked'?true:false)
             label(for=name) !{label}
+
+    else if type === 'textarea'
+        .input-wrap(class!=attributes.class class=attributes.disabled ? 'input--disabled': null)
+            .input-field
+                textarea(name=name id=name value=value required readonly!=attributes.disabled)
+                label(for=name)=label
+                    if attributes.important
+                        font(color="#F6175A") &nbsp;*
+            if js
+                block
+
+    else if type === 'captcha'
+        .input-wrap(class!=attributes.class class=attributes.disabled ? 'input--disabled': null)
+            .input-field
+                input(type="text" name=name id=name value=value required readonly!=attributes.disabled)
+                label(for=name)=label
+                    if attributes.important
+                        font(color="#F6175A") &nbsp;*
+
+            .input-captcha
+                .img
+                    img(src="img/d3e211a71e1e2cb3d8da6088294451e9.png")
+                a(href="#").action
+                    include ../../../img/svg/i-reload.svg
+

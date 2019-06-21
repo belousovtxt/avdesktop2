@@ -4,7 +4,7 @@ block variables
     - const title = "Новости и объявления"
 
 block content
-    +Head('default', 'Для пассажиров', 'Новости и объявления')
+    +Head('default', 'Для пассажиров', 'Новости и объявления')(newsSort=true)
     .container
         .news__container
             +NewsItem(true)

@@ -16,8 +16,10 @@ block content
                 .card__head
                     span Пассажир №1
                     .action.action--fill
+
                         include ../../img/svg/i-block-user.svg
                         | Заполнить
+                        +DropdownPeoples
                 .card__content
                     .inputs
                         +Input('text', 'lastname_1', 'Фамилия', 'Смирнов')
@@ -48,6 +50,8 @@ block content
                     .action.action--fill
                         include ../../img/svg/i-block-user.svg
                         | Заполнить
+
+                        +DropdownPeoples
                 .card__content
                     .inputs
                         +Input('text', 'lastname_2', 'Фамилия', '')

@@ -7,10 +7,10 @@ mixin Header
                 +HeaderLogo
                 .header__links.header--on-default
                     +Link("Поиск билетов", "index.html")
-                    +Link("Автовокзалы")
-                    +Link("Частые вопросы")
+                    +Link("Автовокзалы", "stations.html")
+                    +Link("Частые вопросы", "page-question.html")
 
-                form.header__search.header--on-white
+                form(action="search.html").header__search.header--on-white
                     +Input("text", "global-search__value", "Поиск по сайту")
                     button.btn(type="submit")
                         include ../../../img/svg/i-menu-search.svg
@@ -25,15 +25,15 @@ mixin Header
                 .header__col.header__col-links
                     p Меню
                     a(href="index.html") Поиск билетов
-                    a(href="#") Автовокзалы
-                    a(href="#") Частные вопросы
+                    a(href="stations.html") Автовокзалы
+                    a(href="page-question.html") Частые вопросы
                     a(href="news.html") Новости
-                    a(href="#") Контакты и услуги
-                    a(href="#") Наши партнеры
+                    a(href="contact.html") Контакты и услуги
+                    a(href="page_subpages.html") Наши партнеры
                 .header__col.header__col-links
                     p Пассажирам
                     a(href="#") Возврат билетов
-                    a(href="#") Обратная связь
+                    a(href="feedback.html") Обратная связь
                     a(href="#") Справочная информация
                     a(href="#") Расписание электропоездов
                     a(href="#") Информация по безопасности

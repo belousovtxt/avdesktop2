@@ -1,5 +1,5 @@
 mixin Card(isHaveHead=false, isHaveContent=false, isHaveFooter=false)
-    .card(class!=attributes.class)
+    .card&attributes(attributes)
         if(isHaveHead)
             .card__head
                 block card_head

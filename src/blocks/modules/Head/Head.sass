@@ -61,3 +61,103 @@
         width: 14.5299%
         margin-left: 15px
         margin-right: 15px
+
+
+.head__supages-links
+  display: flex
+  width: 75%
+  flex-flow: row wrap
+  margin: 40px -15px 0
+  padding-bottom: 33px
+
+  .head__subpages-item
+    display: inline-flex
+    padding-top: 10px
+    margin-bottom: 24px
+    font-size: 15px
+    line-height: 140%
+    font-weight: 500
+    color: $el-white
+    width: calc(33.333% - 30px)
+    margin-left: 15px
+    margin-right: 15px
+    border-top: 1px solid $el-white
+    &.head__subpages-active
+      color: $el-accent
+      border-top-color: $el-accent
+
+
+.head--with_map
+  position: relative
+  overflow: hidden
+  background: transparent
+  height: 600px
+  h1
+    width: 340px
+  .container
+    position: absolute
+    width: 671px
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    margin-left: -250px
+    z-index: 3
+    margin-top: 50px
+    top: 50%
+
+  .head__map-search
+    width: 470px
+    margin-top: 25px
+    font-weight: normal
+    font-size: 16px
+    line-height: 140%
+    .btn
+      border: none
+      background: transparent
+      border-radius: 100px
+      box-shadow: none
+      position: absolute
+      top: 0
+      right: 0
+      svg path
+        fill: $el-accent
+
+
+  #map-container
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: inherit
+    z-index: 1
+
+
+    & > ymaps > ymaps > ymaps > ymaps > ymaps
+      //box-shadow: inset 158px 10px 130px 26px rgba(0,0,0,0.75)
+      box-shadow: inset 800px 0px 250px rgba(32, 42, 60, 0.8)
+      @media screen and (min-width: 1440px)
+        box-shadow: inset 1100px 0px 250px rgba(32, 42, 60, 0.8)
+
+
+
+.head__small-map
+  height: 420px
+  h1
+    width: 100%
+
+.head__search
+  width: 770px
+  position: relative
+  label
+    display: none
+  input
+    padding: 0 18px
+  .btn
+    position: absolute
+    border: none
+    border-radius: 38px
+    width: 38px
+    height: 38px
+    padding: 0
+    top: 50%
+    right: 15px
+    transform: translateY(-50%)

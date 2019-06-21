@@ -1,7 +1,7 @@
 extends ../layouts/default
 
 block variables
-    - const title = "Личный кабинет"
+    - const title = "Ваши билеты — Личный кабинет"
 
 block content
     +Head('default', 'Смирнов Андрей Викторович', 'Личный кабинет')
@@ -12,10 +12,16 @@ block content
         }]).head__tabs
 
     .container
-        +Ticket("history").ticket--default
-        +Ticket("history").ticket--default
-        +Ticket("history").ticket--default
-        +Ticket("history").ticket--default
+        .container--user-ticket
+            +Ticket("history").ticket--default.ticket--history
+            +Ticket("history").ticket--default.ticket--history
+            +Ticket("history", true).ticket--default.ticket--history
+            +Ticket("history", true).ticket--default.ticket--history
+            +Ticket("history", true).ticket--default.ticket--history
+            a(href="#").btn.btn--white.btn--icon.btn--ticket-load
+                .icon
+                    include ../../img/svg/i-reload.svg
+                span Загрузить ещё
 
 
 block scripts

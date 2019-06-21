@@ -1,9 +1,15 @@
-mixin NewsItem(important)
+mixin NewsItem(important, descriptor)
     .news-item(class=important?'news-item--important':null)
-        if important === true
-            .news-item__head Важно
-        else
-            .news-item__head 07 мая 2019
+        if !descriptor
+            if important === true
+                .news-item__head Важно
+            else
+                .news-item__head 07 мая 2019
         .news-item__title Внимание! Изменения в расписании Кунгурского направления
-        a(href="page.html").news-item__read-more Подробнее
+        if descriptor
+            .news-item__head=descriptor
+        if !descriptor
+            a(href="#news-item", rel="modal:open").news-item__read-more Подробнее
+        else
+            a(href="page.html").news-item__read-more Подробнее
 

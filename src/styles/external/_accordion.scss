@@ -1,0 +1,88 @@
+/*!
+ * jQuery UI Accordion 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/accordion/#theming
+ */
+
+
+
+.ui-accordion .ui-accordion-header {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  @include border-radius;
+  background: $el-white;
+  height: 100px;
+  border: 1px solid $el-line-gray;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 140%;
+  padding: 0 87px 0 26px;
+  color: $txt-dark;
+
+  span.accordion-label {
+    font-weight: 500;
+    font-size: 12px;
+    color: $el-accent;
+  }
+
+
+  .ui-icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: url("../img/sprites/intermediate-svg/i-arrow-quest.svg") center no-repeat;
+    right: 35px;
+
+    &.ui-icon-triangle-1-s {
+      transform: rotate(180deg);
+    }
+  }
+
+
+}
+
+.ui-accordion .ui-accordion-content {
+  background: $el-white;
+  font-size: 16px;
+  line-height: 170%;
+  border: 1px solid $el-line-gray;
+  @include border-radius;
+  margin-top: -30px;
+  border-top: none;
+  position: relative;
+  z-index: 1;
+  padding-left: 26px;
+  padding-right: 55px;
+  padding-bottom: 18px;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.accordion-sudpages_doc {
+  &.ui-accordion .ui-accordion-header {
+    height: 120px;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    .accordion-label {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  h4 {
+    font-size: 16px !important;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+
+}

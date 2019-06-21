@@ -1,5 +1,5 @@
 mixin Head(type='default', subtitle='Билеты на автобус', title='Пермь – Березники', back=false)
-    section.head(class!=attributes.class)
+    section.head(class!=attributes.class class=type==='with-map'?'head--with_map':null)
         .container
             .head__title
                 .head__title__content
@@ -15,6 +15,9 @@ mixin Head(type='default', subtitle='Билеты на автобус', title='�
                 if(type === 'catalog')
                     .head__title__action
                         +DropdownSort
+                if(attributes.newsSort)
+                    .head__title__action
+                        +DropdownSort("newsSort")
 
             .head__content
                 if block
@@ -34,4 +37,13 @@ mixin Head(type='default', subtitle='Билеты на автобус', title='�
                             +Input('text', 'passenger', 'Пассажиры', "1 взрослый", true).search__passengers.w-170
                                 +Dropdown('people')
                             +Button("Найти рейс").w-170
+                else if type === 'search'
+                    form.head__search
+                        +Input("text", "main-search__value", "Поиск по сайту", "Стоимость провоза багажа")(search=true)
+                        button.btn(type="submit")
+                            include ../../../img/svg/i-menu-search.svg
+        if type === 'with-map'
+            #map-container
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A119ad13c3988615462262c2fc10ca21653c8d00ee1e94abcc40f231557fcaa9a&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true"></script>
+
 

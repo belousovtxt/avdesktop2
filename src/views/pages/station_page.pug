@@ -1,0 +1,81 @@
+extends ../layouts/default
+
+block variables
+	- const title = "Информация по безопасности перевозок"
+
+block content
+	+Head("with-map", "Автовокзалы Прикамья", "Автовокзал, Пермь").head__small-map
+
+	.container
+		.article__page
+
+			.card.card--default.card__stations-main
+				.main-img
+					img(src="img/829f88d6bd360a58fba2add22fe0d778.png")
+				.card__head
+					span г. Пермь, ул. Революции, д.68
+				.card__content
+					.card__col
+						span Справочная служба
+						a(href="tel:") +7 (342) 236-43-00
+						a(href="tel:") +7 (342) 236-44-34
+					.card__col
+						span Режим работы
+						p с 5:30 до 22:40
+					.card__col
+						span Начальник смены
+						a(href="tel:") +7 (342) 236-50-02
+
+
+
+
+			.card.card--default.card__gallery
+				.card__head
+					span Фотографии
+				.card__content
+					a(href="#")
+						img(src="img/829f88d6bd360a58fba2add22fe0d778.png")
+					a(href="#")
+						img(src="img/ca2c82725c7d306af126522c77eec2b2.png")
+					a(href="#")
+						img(src="img/bb95b3422ce6bae8ed6b484636e307f8.png")
+					a(href="#")
+						img(src="img/2bfbd2357e1c3b734f8dacb7e9e7cf8f.png")
+					a(href="#")
+						img(src="img/6fd6916768d594fc8107e696b3d5da4c.png")
+
+
+
+			.card.card--default.card__contact.card__station-page
+				.card__head
+					span Камера хранения
+				.card__content
+					.card__row
+						.card__column
+							span Размер багажа
+							p от 20*40*60
+						.card__column
+							span Стоимость за каждое место багажа
+							p 120 руб.
+					.card__row
+						.card__column
+							span Размер багажа
+							p до 20*40*60
+						.card__column
+							span Стоимость за каждое место багажа
+							p 75 руб.
+
+
+
+
+
+
+
+
+
+
+
+
+
+block scripts
+	script(src="js/main.js")

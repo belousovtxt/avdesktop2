@@ -1,5 +1,5 @@
-mixin Ticket(type='default')
-    .ticket(class!=attributes.class)
+mixin Ticket(type='default', payed)
+    .ticket&attributes(attributes)
         if type === 'default' || type === 'order'
             .ticket__default-info
                 .ticket__info
@@ -46,6 +46,36 @@ mixin Ticket(type='default')
                             span Жен. / 21.04.1985 / Российская Федерация / 59 14 473472
 
         if type === 'history'
+            .ticket__default-info
+                .ticket__info
+                    .ticket__history-info
+                        p Березники — Пермь
+                        span 18 августа в 17:20
+                        a(href="#").link--bordered Детали рейса
+                    .ticket__other-info
+                        .item
+                            span.title Перевозчик:
+                            span.info Железов Д.В.
+                        .item
+                            span.title Автобус:
+                            span.info СЕТРА 49/0
+                        .item
+                            span.title Места:
+                            span.info 5, 6
+                .ticket__buy
+                    .ticket__buy-price 405 ₽
+                    .ticket__buy-num 2 билета
+                    if !payed
+                        +Label('payed')
+                        a(href="#").ticket__buy-action
+                            include ../../../img/svg/i-return-ticket.svg
+                    else
+                        +Label('ended')
+                        a(href="#delete-ticket" rel="modal:open").ticket__buy-action
+                            include ../../../img/svg/i-garbage.svg
+
+
+
 
 
 
