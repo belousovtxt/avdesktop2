@@ -3,6 +3,24 @@ section#news
   box-shadow: inset 0px -1px 0px #E1E1E1
   padding-top: 60px
   padding-bottom: 60px
+  +media("<=d")
+    padding-top: 30px
+    padding-bottom: 35+30+18px
+    position: relative
+    .action
+      position: absolute
+      bottom: 64-18px
+
+      width: calc(100% - 30px)
+      .btn--action
+        width: 100%
+
+    .owl-nav
+      position: absolute
+      top: -32px
+      right: 0
+
+
 
   .row
     display: flex
@@ -25,6 +43,11 @@ section#news
     transform: translateY(-50%)
     cursor: pointer
     +transition
+    +media("<=d")
+      width: 28px
+      height: 28px
+      top: -28px
+      position: static
     &.disabled
       opacity: 0
     span
@@ -37,6 +60,9 @@ section#news
       position: absolute
       left: 0
       top: 0
+      +media("<=d")
+        height: 28px
+        width: 28px
 
   .owl-prev
     left: -19px
@@ -44,3 +70,5 @@ section#news
       transform: rotate(180deg)
   .owl-next
     right: -19px
+    +media("<=d")
+      margin-left: 5px

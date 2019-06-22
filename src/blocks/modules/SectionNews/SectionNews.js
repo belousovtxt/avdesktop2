@@ -3,8 +3,16 @@ import 'owl.carousel'
 
 $(function () {
     $(".owl-carousel").owlCarousel({
-        items: 3,
+        // items: 3,
         margin: 30,
-        nav: true
+        nav: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            1170: {
+                items: 3,
+            }
+        }
     });
 });

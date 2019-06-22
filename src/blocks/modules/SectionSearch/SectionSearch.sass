@@ -10,6 +10,11 @@ section#search
   flex-flow: column
   align-items: center
   color: $el-white
+  +media("<=d")
+    height: auto
+    padding-top: 70px
+    margin-top: -70px
+    padding-bottom: 35px
   h1
     margin-top: 91px
     margin-bottom: 0
@@ -17,6 +22,9 @@ section#search
     font-weight: bold
     text-align: center
     line-height: 51px
+    +media("<=d")
+      margin-top: 28px
+      font-size: 28px
   p
     margin-top: 30px
     font-size: 18px
@@ -24,6 +32,9 @@ section#search
     font-weight: normal
     text-align: center
     line-height: 22px
+    +media("<=d")
+      font-size: 16px
+      margin-top: 10px
 
 .form__search
   display: flex
@@ -31,6 +42,8 @@ section#search
   width: 100%
   margin-top: 55px
   align-items: flex-start
+  +media("<=d")
+    margin-top: 20px
 
   .inputs
     display: flex
@@ -38,15 +51,26 @@ section#search
     align-items: center
     justify-content: center
     position: relative
+    +media("<=d")
+      flex-wrap: wrap
+      justify-content: space-between
     .input-wrap
       margin-left: $column-margin / 2
       margin-right: $column-margin / 2
+      +media("<=d")
+        margin-left: 0
+        margin-right: 0
+
 
   .btn
     padding: 0 70px
     margin-left: auto
     margin-right: auto
     margin-top: 60px
+    +media("<=d")
+      margin-top: 15px
+      width: 100%
+      padding: 0
 
   .inputs__switcher
     width: 38px
@@ -62,13 +86,25 @@ section#search
     margin-right: -19px
     z-index: 1
     cursor: pointer
+    +media("<=d")
+      transform: rotate(90deg)
+      margin-right: 0
+      margin-left: 0
+      right: 13px
+      position: absolute
+      top: 64-15px
 
   .search__from, .search__to
     width: 23.0769%
+    +media("<=d")
+      width: 100%
+      margin-bottom: 15px
 
   .search__date, .search__passengers
     width: 14.5299%
     position: relative
+    +media("<=d")
+      width: calc(50% - 8px)
     &::before
       content: ' '
       position: absolute

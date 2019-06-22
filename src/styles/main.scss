@@ -4,7 +4,14 @@
 @import "helpers/mixins";
 @import "helpers/functions";
 @import "vendor/normalize";
-@import "vendor/smart-grid";
+@import "../../node_modules/include-media/dist/include-media";
+
+
+$breakpoints: ('p': 320px);
+$breakpoints: ('t': 768px);
+$breakpoints: ('d': 1170px);
+
+
 @import "base/fonts";
 @import "base/general";
 @import "../blocks/components/components";

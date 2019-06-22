@@ -3,9 +3,15 @@
   background: url("../img/7e06d5042c563469364296faabf9ee24.png") center no-repeat, #FFFFFF
   box-shadow: inset 0px -1px 0px #E1E1E1
   margin-bottom: -40px
+  +media("<=d")
+    background-size: cover !important
   .container
     padding-top: 77px
     padding-bottom: 80px
+    +media("<=d")
+      padding-top: 30px
+      padding-bottom: 40px
+
   h3
     margin-top: 0
     margin-bottom: 0
@@ -13,9 +19,15 @@
     font-size: 28px
     line-height: 34px
     color: $el-main
+    +media("<=d")
+      font-size: 24px
+      line-height: normal
   p, .all-cities
     width: 50%
     padding-right: 15px
+    +media("<=d")
+      width: 100%
+
 
   p
     margin-top: 20px
@@ -24,9 +36,13 @@
     color: $txt-dark
     padding-bottom: 9px
     margin-bottom: 0
+    +media("<=d")
+      padding-bottom: 0
 
   .all-cities
     margin-top: 22px
+    +media("<=d")
+      margin-top: 20px
     p
       font-weight: bold
       font-size: 14px
@@ -42,12 +58,17 @@
       flex-flow: column wrap
       height: 204px
       margin-top: 14px
+      +media("<=d")
+        height: auto
+        flex-flow: row wrap
       a
         display: inline-flex
         width: 25%
         font-size: 14px
         line-height: 140%
         color: $el-accent
+        +media("<=d")
+          width: 50%
         &.bold
           font-weight: bold
     .all-cities__show
@@ -56,3 +77,5 @@
       font-size: 14px
       color: $el-accent
       border-bottom: 1px dashed $el-accent
+      +media("<=d")
+        margin-top: 20px

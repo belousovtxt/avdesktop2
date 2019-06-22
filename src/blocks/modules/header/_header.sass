@@ -4,11 +4,15 @@ header.header
   color: $el-white
   position: relative
   z-index: 10
+  +media("<=d")
+    height: 70px
   +transition
 
   .header__min
     border-bottom: 1px solid rgba(255, 255, 255, .15)
     height: 100px
+    +media("<=d")
+      height: 70px
 
     .container
       display: flex
@@ -21,6 +25,12 @@ header.header
     margin-right: 60px
     width: 140px
     height: 24px
+    +media("<=d")
+      width: 137px
+      height: 22px
+      background-size: contain
+      margin-right: 0
+
     background: url("../img/sprites/intermediate-svg/avperm-logo-h_filal.svg") center no-repeat
 
   .header__links
@@ -29,6 +39,9 @@ header.header
     display: flex
     flex-flow: row
     align-items: center
+    +media("<=d")
+      &.header--on-default
+        display: none
 
     &.header__links--right
       margin-left: auto
@@ -45,6 +58,14 @@ header.header
 
         &.link--bordered
           margin-right: 18px
+          +media("<=d")
+            margin-right: 10px
+            font-size: 0
+            width: 24px
+            height: 24px
+            background: url("../img/sprites/intermediate-svg/ibtn-user.svg") center no-repeat
+            border-bottom: 0
+            padding-bottom: 0
 
       .link--bordered
 
@@ -80,6 +101,8 @@ header.header
     left: 0
     background: $el-white
     color: $txt-dark
+    +media("<=d")
+      min-height: 100%
 
     .header__min
       border-bottom: none
@@ -90,6 +113,8 @@ header.header
 
     .header__logo
       background: url("../img/sprites/intermediate-svg/avperm-logo-h_filal__b.svg") center no-repeat
+      +media("<=d")
+        background-size: contain
 
     .icon-menu
       background: url("../img/sprites/intermediate-svg/ibtn-menu_close.svg") center no-repeat !important
@@ -105,6 +130,12 @@ header.header
       width: calc(66.666% - 10px)
       position: relative
       height: 64px
+      +media("<=d")
+        width: calc(100% - 45px)
+        position: absolute
+        top: 70+18px
+        left: 15px
+        z-index: 101
       input
         box-shadow: none
         border: 1px solid #E1E1E1
@@ -129,10 +160,29 @@ header.header
       overflow: hidden
       position: relative
       z-index: 100
+      +media("<=d")
+        overflow: scroll
+        //padding-top: 96px
+        align-items: flex-start
       .container
         //height: 100%
         display: flex
         align-items: flex-start
+        +media("<=d")
+          flex-flow: column nowrap
+          //height: 100%
+          margin-top: 96px
+          position: relative
+          padding-bottom: 20px
+          &::before
+            content: ' '
+            background: $el-white
+            height: 96px
+            width: 100%
+            left: 0
+            top: 71px
+            position: fixed
+
 
         .header__col
           display: flex
@@ -140,11 +190,17 @@ header.header
           width: calc(25% - 24px)
           margin-right: 30px
           margin-top: -80px
+          +media("<=d")
+            width: 100%
+            margin-top: 0
+            margin-right: 0
           p
             margin-top: 0
           &.header__col-last
             width: calc(25% + 30px)
             margin-right: 0
+            +media("<=d")
+              width: 100%
 
             .header__col-item
               margin-bottom: 34px
@@ -174,6 +230,8 @@ header.header
                   margin-right: 8px
           &:first-child
             margin-left: calc(16.666% + 5px)
+            +media("<=d")
+              margin-left: 0
           p
             font-size: 16px
             font-weight: 600
