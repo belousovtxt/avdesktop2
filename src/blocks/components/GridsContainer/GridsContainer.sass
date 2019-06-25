@@ -2,16 +2,33 @@
   display: flex
   flex-flow: row nowrap
   margin-top: 40px
+  @extend %mobileTopMargin
+  +media("<=d")
+    flex-flow: column nowrap
+
 
   .container__left
     flex: 0 0 76.31578%
     margin-right: 15px
     max-width: 870px
+    +media("<=d")
+      flex: 0 0 100%
+      max-width: 100%
+      margin-right: 0
+      order: 2
+
 
   .container__right
     flex: 0 0 23.6842%
     margin-left: 15px
     max-width: 270px
+    +media("<=d")
+      margin-left: 0
+      margin-top: 0px
+      margin-bottom: 15px
+      flex: 0 0 100%
+      max-width: 100%
+      order: 1
 
   .container__side
     position: relative
@@ -22,5 +39,7 @@
     width: 270px
     margin-left: auto
     margin-right: auto
+    +media("<=d")
+      width: 100%
 
 

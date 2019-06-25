@@ -35,8 +35,21 @@
 
   &[data-dropdown='city']
     width: 270px
+    +media("<=d")
+      width: 100%
+  &[data-dropdown='date']
+    +media("<=d")
+      width: calc(200% + 16px)
+      max-width: 100vw
+      align-items: center
+      .ui-datepicker
+        margin-left: auto
+        margin-right: auto
   &[data-dropdown="people"]
     width: 270px
+    +media("<=d")
+      width: calc(200% + 16px)
+      max-width: 100vw
     li
       flex-flow: row nowrap
       cursor: unset

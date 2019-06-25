@@ -55,7 +55,7 @@ mixin Modals
             .modal__btn-group
                 a(href="#mail-sended", rel="modal:open").btn Восстановить
                 a(href="#login-form", rel="modal:open").btn.btn--white Отмена
-    .modal#delete-ticket
+    .modal.alert#delete-ticket
         .modal__head
             h2 Удалить билет
             p.descriptor Запись о покупке будет удалена из вашего списка, восстановить ее будет нельзя.
@@ -63,7 +63,7 @@ mixin Modals
             .modal__btn-group
                 a(href="#", rel="modal:close").btn Удалить
                 a(href="#", rel="modal:close").btn.btn--white Отмена
-    .modal#mail-sended
+    .modal.alert#mail-sended
         .modal__head
             h2 Письмо отправлено
             p.descriptor Проверьте пожалуйста свою почту.
@@ -82,19 +82,19 @@ mixin Modals
                 b 07:05; 11:05; 17:50;
             p сб, вс: <br/>
                 b 08:05; 12:45; 16:15;
-    .modal#message-sended
+    .modal.alert#message-sended
         .modal__head
             h2 Сообщение отправлено
             p.descriptor Спасибо за ваше сообщение, мы обработаем вашу заявку и обязательно с вами свяжемся.
         .modal__content
             a(href="#" rel="modal:close").btn.btn--full OK
-    .modal#saved-changes
+    .modal.alert#saved-changes
         .modal__head
             h2 Изменения сохранены
             p.descriptor Данные ваша учетной запись обновлены, теперь вы можете продолжить работу с системой.
         .modal__content
             a(href="#" rel="modal:close").btn.btn--full OK
-    .modal#account-created
+    .modal.alert#account-created
         .modal__head
             h2 Аккаунт создан
             p.descriptor Спасибо за регистрацию! Теперь вы можете продолжить работу с приложением.

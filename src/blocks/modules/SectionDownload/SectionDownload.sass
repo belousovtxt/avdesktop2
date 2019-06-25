@@ -15,9 +15,8 @@
       width: calc(50% - 15px)
       height: 100%
       +media("<=d")
-        padding-top: 30px
-        padding-bottom: 0
         width: 100%
+        padding: 30px 15px 0
 
 
       h3
@@ -28,12 +27,15 @@
         margin-bottom: 0
         +media("<=d")
           font-size: 24px
+          padding-right: 14px
       p
         margin-top: 20px
         color: $txt-dark
         font-size: 16px
         line-height: 140%
         height: 60px
+        +media("<=d")
+          height: auto
 
       .buttons
         margin-top: 16px
@@ -78,3 +80,4 @@
         margin-top: 15px
         background-position-y: top
         background-size: contain
+        background: url("../img/img-area_mobile.png") top center no-repeat

@@ -10,6 +10,7 @@
     color: $txt-dark
     display: block
     width: 100%
+
     &::before
       content: ' '
       width: 100%
@@ -20,6 +21,7 @@
       left: 0
       transform: translateY(-50%)
       z-index: 1
+
     p
       background: $el-white
       padding-right: 10px
@@ -29,20 +31,30 @@
 
   &:last-child
     margin-bottom: 0
+
   &.card--separations .card__head
     padding: 30px 26px
     border-bottom: 1px solid #E1E1E1
+    +media("<=d")
+      height: 48px
+      padding: 15px 15px 13px
+
     span
       font-weight: 500
       font-size: 18px
+      +media("<=d")
+        font-size: 16px
 
   &.card--separations .card__footer
     border-top: 1px solid #E1E1E1
     padding: 26px 44px 25px 26px
+    +media("<=d")
+      padding: 14px 20px 18px 15px
 
 
   &.card__c-empty
     width: 100% !important
+
     span
       color: $txt-dark
 
@@ -66,6 +78,7 @@
     .card__head
       padding-right: 81px
       margin-bottom: 0 !important
+
       span
         font-size: 16px !important
         line-height: 140%
@@ -73,6 +86,7 @@
 
     .card__content
       margin-top: auto
+
       span
         font-size: 12px
         color: $txt-gray
@@ -82,17 +96,30 @@
 
   &.card--default
     padding: 25px 26px 29px
+    +media("<=d")
+      padding: 15px
 
     .card__head
       display: flex
       flex-flow: row wrap
       align-items: center
       margin-bottom: 29px
+      +media("<=d")
+        margin-left: -15px
+        margin-right: -15px
+        margin-top: -15px
+        padding-top: 15px
+        padding-left: 15px
+        padding-right: 8px
+        height: 48px
+
+
       span
         font-weight: 500
         font-size: 18px
         color: $txt-dark
         width: 100%
+
       p
         font-size: 15px
         margin-top: 15px
@@ -103,6 +130,7 @@
       .action
         margin-left: auto
         margin-bottom: -5px
+
         &.action--fill
           height: 32px
           display: flex
@@ -113,8 +141,13 @@
           font-size: 12px
           color: $txt-gray
           font-weight: 500
+          +media("<=d")
+            svg
+              margin-right: 0
+            font-size: 0
           +border-radius
           cursor: pointer
+
           svg
             margin-right: 10px
 
@@ -122,15 +155,24 @@
   &.card--feedback
     width: 75%
     margin-top: 40px
+    +media("<=d")
+      width: 100%
+    @extend %mobileTopMargin
 
     .agreements
       display: flex
       flex-flow: row nowrap
       align-items: center
       margin-top: 30px
+      +media("<=d")
+        flex-flow: column nowrap
+
       .btn
         width: 270px
         flex: 0 0 270px
+        +media("<=d")
+          width: 100%
+          flex: unset
 
 
   &.card__gallery
@@ -139,6 +181,7 @@
       margin-right: -10px
       display: flex
       flex-flow: row wrap
+
       a
         width: 128px
         height: 105px
@@ -146,6 +189,11 @@
         margin-left: 10px
         +border-radius
         overflow: hidden
+        +media("<=d")
+          width: calc(50% - 20px)
+          height: auto
+          margin-bottom: 10px
+
         img
           width: 100%
           height: 100%
@@ -154,22 +202,43 @@
 
   &.card__stations-main
     position: relative
+
     .main-img
       position: absolute
       width: 200px
       height: 125px
       top: 24px
       right: 26px
+      +media("<=d")
+        position: static
+        width: 100%
+        height: auto
+        max-height: 300px
+        overflow: hidden
+        margin-bottom: 15px
+        img
+          width: 100%
+          height: auto
+          object-fit: cover
+          object-position: center
+          margin-bottom: 0
+          margin-top: 0
+
     .card__content
       display: flex
       flex-flow: row wrap
       width: 480px
       margin-bottom: -15px
+      +media("<=d")
+        width: 100%
+
       .card__col
         width: 240px
         display: flex
         flex-flow: column nowrap
         margin-bottom: 15px
+        +media("<=d")
+          width: 100%
 
         span
           font-size: 12px
@@ -183,13 +252,12 @@
           line-height: 170%
 
 
-
   &.card__station-page
     .card__row
       width: 100%
+
       p
         margin-bottom: 0
-
 
 
   &.card-half-inputs
@@ -198,64 +266,136 @@
       flex-flow: row wrap
       margin-left: -10px
       margin-right: -10px
+      +media("<=d")
+        margin-left: 0
+        margin-right: 0
 
       .input-wrap
         flex: 0 0 calc(50% - 20px)
         margin-bottom: 20px
         margin-left: 10px
         margin-right: 10px
+        +media("<=d")
+          flex: 0 0 100%
+          margin-bottom: 15px
+          margin-left: 0
+          margin-right: 0
 
   &.card--contact-info
+    +media("<=d")
+      .card__head
+        margin-bottom: 0
+        padding-bottom: 13px
+      .card__content
+        margin-left: -15px
+        margin-right: -15px
+        border-top: 1px solid $el-line-gray
+        .input-wrap
+          margin-bottom: 0 !important
+          input, select
+            border-radius: 0 !important
+            box-shadow: inset 0px -1px 0px #E1E1E1
+
+        .input-field--checkbox
+          margin-left: 15px
+          margin-right: 15px
+          width: unset
     .agreements
       margin-top: 10px
 
   &.card--people
+    .card__content
+      margin-left: -15px
+      margin-right: -15px
+      border-top: 1px solid $el-line-gray
+      .input-wrap
+        margin-bottom: 0 !important
+        input, select
+          border-radius: 0 !important
+          box-shadow: inset 0px -1px 0px #E1E1E1
 
-   .card__head
-     flex-flow: row nowrap
+  &.card--people
 
-   .action--fill
-     position: relative
-   .card--people__selected-place
-     display: flex
-     height: 64px
-     border: 1px dashed $el-line-gray
-     padding: 11px
-     +border-radius
-     align-items: center
-     .place
-       display: flex
-       flex-flow: row nowrap
-       align-items: center
-       span
-         display: inline-flex
-       .place-n
-         width: 42px
-         height: 42px
-         color: $el-white
-         background: $el-accent
-         font-size: 14px
-         font-weight: 500
-         align-items: center
-         justify-content: center
-         +border-radius
 
-       .desc
-         margin-left: 10px
-         font-weight: 500
-         font-size: 15px
-         color: $txt-dark
+    .card__head
+      flex-flow: row nowrap
+      +media("<=d")
+        margin-bottom: 10px
 
-     .card--people__reselect-place
-       margin-left: auto
-       color: $el-accent
-       font-size: 14px
-       border-bottom: 1px dashed $el-accent
+
+    .action--fill
+      position: relative
+
+    .card--people__selected-place
+      display: flex
+      height: 64px
+      border: 1px dashed $el-line-gray
+      padding: 11px
+      +border-radius
+      align-items: center
+      +media("<=d")
+        border: none
+        padding-right: 19px
+        padding-bottom: 0
+        padding-top: 10px
+        margin-bottom: -10px
+        .card--people__reselect-place
+          display: none
+
+      .place
+        display: flex
+        flex-flow: row nowrap
+        align-items: center
+
+        span
+          display: inline-flex
+
+        .place-n
+          width: 42px
+          height: 42px
+          color: $el-white
+          background: $el-accent
+          font-size: 14px
+          font-weight: 500
+          align-items: center
+          justify-content: center
+          +border-radius
+
+        .desc
+          margin-left: 10px
+          font-weight: 500
+          font-size: 15px
+          color: $txt-dark
+
+      .card--people__reselect-place
+        margin-left: auto
+        color: $el-accent
+        font-size: 14px
+        border-bottom: 1px dashed $el-accent
+
+
   &.card--payments
+    .card__head
+      +media("<=d")
+        margin-bottom: 0
+        padding-bottom: 13px
+        border-bottom: 1px solid $el-line-gray
+
+    .card__footer
+      +media("<=d")
+        margin-top: 0
+        padding-top: 17px
+        font-size: 14px
+        line-height: 18px
+        align-items: flex-start
+        border-top: none
+
     .payments__grid
       display: flex
       flex-flow: column nowrap
+
       .item
+
         display: flex
         flex-flow: row nowrap
         padding: 0 30px
@@ -266,6 +406,31 @@
         align-items: center
         margin-bottom: 20px
         position: relative
+        +media("<=d")
+          height: auto
+          box-shadow: inset 0px -1px 0px #E1E1E1
+          margin-left: -15px
+          margin-right: -15px
+          width: unset
+          margin-bottom: 0
+          border-radius: 0
+          border: none
+          padding: 15px
+          &::before
+            content: none
+          .payment__icon
+            order: 2
+          .payment__content
+            order: 1
+            margin: 0
+            padding: 0 !important
+            padding-right: 11px !important
+            span
+              font-size: 15px
+            p
+              font-size: 13px
+
+
         &::before
           content: ' '
           position: absolute
@@ -273,21 +438,28 @@
           height: 24px
           background: url("../img/sprites/intermediate-svg/i-arrow-choice.svg")
           right: 30px
+
         &:last-child
           margin-bottom: 0
 
         .payment__content
           margin-left: 30px
           width: 61.47%
+          +media("<=d")
+            width: 100%
+            padding: 30px 0
+
           span
             font-weight: 500
             font-size: 16px
             line-height: 20px
+
           p
             margin-top: 10px
             font-size: 14px
             line-height: 18px
             color: $txt-dark
+
     .card__footer
       margin-top: 20px
       padding-top: 20px
@@ -296,10 +468,12 @@
       flex-flow: row nowrap
       align-items: center
       margin-bottom: -8px
+
       svg
         width: 18px
         height: 18px
         flex: 0 0 18px
+
       p
         margin-top: 0
         margin-bottom: 0
@@ -314,15 +488,19 @@
     flex-flow: row nowrap
     padding: 25px 30px
     align-items: flex-start
+    +media("<=d")
+      width: 100%
 
     &:first-child
       margin-top: 40px
+      @extend %mobileTopMargin
 
 
     .icon
       width: 60px
       height: 60px
       margin-right: 30px
+
     .content
 
 
@@ -347,6 +525,7 @@
 
     &.card--with-arrow
       position: relative
+
       &::before
         content: ' '
         position: absolute
@@ -356,24 +535,38 @@
         top: 50%
         right: 30px
         transform: translateY(-50%)
+
   &.card__contact
     min-height: 170px
+
     .card__head
       margin-bottom: 25px
       padding-right: 300-26px
+      +media("<=d")
+        padding-right: 0
+
       span
         line-height: 140%
 
     .card__content
       display: flex
       flex-flow: row wrap
+
     .card__column
       display: flex
       flex-flow: column nowrap
       flex: 0 0 244px
       margin-right: 30px
+      +media("<=d")
+        flex: unset
+        margin-right: 0
+        margin-bottom: 15px
+        &:last-child
+          margin-bottom: 0
+
       &:last-child
         margin-right: 0
+
       span
         font-size: 12px
         color: $txt-gray
@@ -381,9 +574,10 @@
 
       a
         margin-bottom: 5px
+
         &:last-child
           margin-bottom: 0
-          
+
         &.link--default
           color: $el-main
           font-size: 16px
@@ -394,19 +588,27 @@
       border-bottom: 1px solid $el-line-gray
       padding-top: 25px
       padding-bottom: 20px
+      +media("<=d")
+        flex-flow: column nowrap
+
       &:first-child
         padding-top: 0
+
       &:last-child
         border-bottom: none
         margin-bottom: -29px
+
       .card__column
         &:last-child
           flex: 0 0 443px
+          +media("<=d")
+            flex: unset
+
           p
             margin-bottom: 5px
+
             &:last-child
               margin-bottom: 0
-
 
 
 .card--places
@@ -418,6 +620,9 @@
       flex-flow: column wrap
       height: 273px
       margin: -7.5px
+      +media("<=d")
+        flex-flow: row wrap
+        height: auto
 
     .places__item
       width: 42px
@@ -447,6 +652,7 @@
       width: 45px
       height: 45px
       display: none
+
       &:nth-child(2n)
         display: block
 
@@ -454,6 +660,11 @@
       height: 100%
       width: 42px
       margin: 7.5px
+      +media("<=d")
+        margin-left: auto
+        height: 42px
+        width: 102px
+
       .places__wheel_icon
         +border-radius
         background: #EEEEEE
@@ -461,16 +672,24 @@
         display: flex
         justify-content: center
         align-items: center
+        +media("<=d")
+          height: 100%
 
   .card__footer
     display: flex
     flex-flow: row nowrap
     align-items: center
+    +media("<=d")
+      flex-flow: column nowrap
+
     .places__info
       display: flex
       flex-flow: row nowrap
       width: 58%
       align-items: center
+      +media("<=d")
+        width: 100%
+
       svg
         flex: 0 0 20px
 
@@ -487,17 +706,27 @@
       display: flex
       flex-flow: row nowrap
       margin-left: auto
+      +media("<=d")
+        width: 100%
+        margin-top: 15px
+        margin-left: 68px
+
       .item
         display: flex
         flex-flow: row nowrap
         margin-right: 24px
         font-size: 14px
         color: $txt-dark
+        +media("<=d")
+          margin-right: 15px
+
         &:last-child
           margin-right: 0
+
           .ptype
             background: #EEEEEE
             border-color: #EEEEEE
+
       .ptype
         width: 16px
         height: 16px
@@ -507,17 +736,43 @@
         +border-radius
 
 
-
-
 .card--right-side
   padding: 20px 25px
   display: flex
   flex-flow: column nowrap
   font-size: 12px
+  +media("<=d")
+    padding: 15px
+    overflow: hidden
+    .ticket__footer-brone
+      display: none !important
+
+    .ticket__dates
+      display: flex
+      flex-flow: row nowrap
+
 
   .ticket__date
     margin-bottom: 16px
     flex-flow: row nowrap
+    +media("<=d")
+      flex-flow: column nowrap
+      margin-bottom: 0
+      width: 50%
+
+    +media("<=d")
+      &:first-child
+        position: relative
+
+        &::before
+          width: 16px
+          height: 7px
+          content: ' '
+          position: absolute
+          right: 16px
+          top: 3px
+          background: url("../img/sprites/intermediate-svg/i-arrow-dir.svg") center no-repeat
+
     &:last-child
       margin-bottom: 0
 
@@ -525,30 +780,56 @@
     flex-flow: column nowrap
     align-items: flex-start
     justify-content: flex-start
+
     .dop
       margin-left: 0
+
+    +media("<=d")
+      .time
+        font-size: 18px
+        margin-bottom: 5px
+      .dop
+        margin-bottom: 2px
+        font-size: 11px
+        font-weight: 500
 
   .ticket__date_target
     margin-top: 0
     flex: 0 0 139px
     margin-left: auto
+    +media("<=d")
+      flex: unset
+      margin-left: 0
+      .station
+        display: none
+      .city
+        margin-bottom: 0
+
 
   .ticket__info
     padding-bottom: 14px
     border-bottom: 1px solid $el-line-gray
     padding-top: 14px
+
     &:first-child
       padding-top: 0
+
     &:last-child
       border-bottom: none
       padding-bottom: 0
 
     &.ticket__dates
       padding-bottom: 20px
+      +media("<=d")
+        padding-bottom: 14px
+
 
     &.ticket__info--other-info
       display: flex
       flex-flow: row wrap
+      +media("<=d")
+        display: none
+
       .item
         width: 50%
         flex: 0 0 50%
@@ -556,8 +837,10 @@
         flex-flow: column nowrap
         line-height: 146%
         font-weight: 500
+
         .title
           color: $txt-gray
+
         .info
           color: $el-main
 
@@ -568,10 +851,13 @@
       font-weight: 500
       border-bottom: none
       padding-bottom: 0
+
       span
         margin-bottom: 4px
+
         &.important
           color: $el-accent
+
         &:last-child
           margin-bottom: 0
 
@@ -582,6 +868,18 @@
     position: relative
     display: flex
     flex-flow: row wrap
+    +media("<=d")
+      margin-top: 14px
+      flex-flow: row nowrap
+      align-items: center
+      border-top: 1px solid $el-line-gray
+      .price
+        margin-bottom: 0 !important
+        font-size: 18px !important
+        text-align: right
+        order: 2
+        height: 22px !important
+
     &::before
       content: ' '
       width: calc(100% + 25px + 25px)
@@ -590,6 +888,28 @@
       height: 8px
       position: absolute
       background: url("../img/sprites/intermediate-svg/cut-h.svg") center no-repeat
+
+    &::after, &::before
+      +media("<=d")
+        width: 8px
+        height: 8px
+        content: ' '
+        background: $el-line-gray
+        border-radius: 8px
+        top: -3px
+        outline: 15px solid $el-white
+        position: absolute
+
+    &::before
+      +media("<=d")
+        right: -18px
+        left: unset
+
+    &::after
+      +media("<=d")
+        left: -18px
+
+
     span
       color: $txt-gray
       font-size: 12px
@@ -597,11 +917,13 @@
       line-height: 146%
       display: block
       width: 100%
+
       &.price
         margin-bottom: 5px
         color: $el-accent
         font-size: 24px
         height: 29px
+
     .ticket__footer-brone
       background: $el-accent
       color: $el-white

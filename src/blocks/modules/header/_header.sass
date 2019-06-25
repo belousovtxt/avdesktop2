@@ -103,6 +103,11 @@ header.header
     color: $txt-dark
     +media("<=d")
       min-height: 100%
+      padding-bottom: 15px
+
+    +media("<=d")
+      .header__links--right .link--bordered
+        background: url("../img/sprites/intermediate-svg/ibtn-user-accent.svg") center no-repeat !important
 
     .header__min
       border-bottom: none
@@ -123,6 +128,7 @@ header.header
       color: $el-accent
       border-bottom-color: rgba($el-accent, .5)
 
+
     .header--on-white
       display: flex
 
@@ -131,7 +137,7 @@ header.header
       position: relative
       height: 64px
       +media("<=d")
-        width: calc(100% - 45px)
+        width: calc(100% - 30px)
         position: absolute
         top: 70+18px
         left: 15px
@@ -177,11 +183,18 @@ header.header
           &::before
             content: ' '
             background: $el-white
-            height: 96px
+            height: 95px
             width: 100%
             left: 0
             top: 71px
             position: fixed
+            z-index: 1
+
+          .header__col-buttons
+            width: 100%
+            flex-flow: column nowrap
+            .btn
+              width: 100% !important
 
 
         .header__col
@@ -194,6 +207,18 @@ header.header
             width: 100%
             margin-top: 0
             margin-right: 0
+            padding-top: 17px
+            padding-bottom: 7px
+            position: relative
+            &::before
+              content: ' '
+              width: 100vw
+              height: 1px
+              background: $el-line-gray
+              position: absolute
+              left: -15px
+              top: 0
+
           p
             margin-top: 0
           &.header__col-last

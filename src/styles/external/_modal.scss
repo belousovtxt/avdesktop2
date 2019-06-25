@@ -8,6 +8,9 @@
   box-sizing: border-box;
   background: rgba(#202A3C, .5);
   text-align: center;
+  @include media("<=d") {
+    padding: 0;
+  }
 }
 .blocker:before{
   content: "";
@@ -48,6 +51,10 @@
   -moz-border-radius: 100%;
   border-radius: 100%;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1), 0px 2px 6px rgba(0, 0, 0, 0.25);
+  @include media("<=d") {
+    top: 15px;
+    right: 15px;
+  }
 
 }
 

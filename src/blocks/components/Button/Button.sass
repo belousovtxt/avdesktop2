@@ -10,8 +10,15 @@
   font-weight: 500
   padding: 0 16px
   cursor: pointer
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  border: none
   +btn-shadow
   +border-radius
+
+  +media("<=d")
+    width: 100%
 
   &.btn--full
     width: 100%
@@ -48,13 +55,20 @@
   display: flex
   flex-flow: row nowrap
   width: 82.905%
+  +media("<=d")
+    width: 100%
+    flex-flow: column nowrap
 
   .btn
     width: 33.3333%
+    +media("<=d")
+      width: 100%
 
     &:nth-child(2)
       margin-left: 20px
       margin-right: 20px
+      +media("<=d")
+        margin: 15px 0
 
     span
       margin-left: auto

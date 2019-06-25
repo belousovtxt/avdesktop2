@@ -1,5 +1,7 @@
 mixin Head(type='default', subtitle='Билеты на автобус', title='Пермь – Березники', back=false)
-    section.head(class!=attributes.class class=type==='with-map'?'head--with_map':null)
+    section.head(class!=attributes.class class=type==='with-map'?'head--with_map':null
+                class=attributes.newsSort?'head--with-news':null)
+
         .container
             .head__title
                 .head__title__content
@@ -12,6 +14,9 @@ mixin Head(type='default', subtitle='Билеты на автобус', title='�
                         span=subtitle
 
                     h1(class!=type==='article'?"head__article":null)=title
+                    if type === 'catalog'
+                        span.m-subtitle 16 августа, 1 взрослый
+
                 if(type === 'catalog')
                     .head__title__action
                         +DropdownSort
@@ -23,7 +28,7 @@ mixin Head(type='default', subtitle='Билеты на автобус', title='�
                 if block
                     block
                 else if (type=='catalog')
-                    div.form__search
+                    div.form__search.form__search-catalog
                         .inputs
                             +Input('text', 'from', 'Откуда', 'Пермь', true).search__from.w-270
                                 +Dropdown('city')

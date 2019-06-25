@@ -2,13 +2,22 @@
   display: flex
   flex-flow: row wrap
   margin-top: 40px
+  @extend %mobileTopMargin
   margin-left: -15px
   margin-right: -15px
+  +media("<=d")
+    margin-left: 0
+    margin-right: 0
+    flex-flow: column nowrap
 
 
   .news-item
     width: calc(33.333% - 30px)
     margin: 15px
+    +media("<=d")
+      width: 100%
+      margin: 0
+      margin-bottom: 15px
 .container.container--news
   display: flex
 
@@ -18,3 +27,5 @@
     display: inline-flex
     margin-left: auto
     margin-right: auto
+    +media("<=d")
+      width: 100% !important

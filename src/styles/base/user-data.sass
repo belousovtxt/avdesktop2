@@ -1,12 +1,47 @@
 .container__user-data
   width: 75%
   margin-top: 40px
+  +media("<=d")
+    width: 100%
+    .card
+      .card__head
+        margin-bottom: 0
+        padding-bottom: 13px
+
+      .btn
+        margin-left: 15px
+        margin-right: 15px
+        margin-top: 15px
+        width: calc(100% - 30px)
+
+      .card__header
+        padding-left: 18px
+        padding-right: 18px
+        height: 48px
+        border-bottom: 1px solid $el-line-gray
+        display: flex
+        align-items: center
+        &::before
+          content: none
+        p
+          margin-top: 0
+          margin-bottom: 0
+          font-weight: 500
+          font-size: 12px
+
+
+
+  @extend %mobileTopMargin
   .inputs
     margin-bottom: -20px
+    +media("<=d")
+      margin-bottom: 0
 
   .btn
     width: 270px
     margin-top: 30px
+    +media("<=d")
+      width: 100%
 
   .card--user-data--passengers-data
     .card__content

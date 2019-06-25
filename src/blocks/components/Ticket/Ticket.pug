@@ -15,7 +15,7 @@ mixin Ticket(type='default', payed)
                 .ticket__buy
                     .ticket__buy-price 405 ₽
                     if type === 'default'
-                        +Button("Купить", 'link', 'order-places.html')
+                        +Button("Купить", 'button', 'order-places.html')
                     else if type === 'order'
                         .ticket__buy-num 2 билета
                         +Label('payed')

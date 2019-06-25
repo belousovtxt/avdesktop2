@@ -2,6 +2,8 @@
   width: 83.3333%
   display: flex
   flex-flow: column nowrap
+  +media("<=d")
+    width: 100%
   .ticket
     width: 100%
 
@@ -9,3 +11,5 @@
     width: 310px
     margin-left: auto
     margin-right: auto
+    +media("<=d")
+      width: 100% !important

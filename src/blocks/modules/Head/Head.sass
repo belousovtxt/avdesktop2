@@ -4,8 +4,35 @@
   margin-top: -101px
   color: $el-white
   min-height: 300px
+  +media(">=d")
+
+    .m-subtitle
+      display: none
+
+
+
+  +media("<=d")
+    padding-top: 71px
+    margin-top: -71px
+    min-height: 200px
+    &.head--with-news
+      .container
+        min-height: 170px
+      .dropdown__sort
+        width: 100%
+        left: 1px
+        bottom: 0
+    .m-subtitle
+      display: block !important
+      font-size: 12px !important
+      font-weight: 500 !important
+      color: rgba($el-white, .7) !important
+      margin-top: 6px !important
   .container
     margin-top: 60px
+    +media("<=d")
+      margin-top: 20px
+      position: relative
 
   .head__title
     display: flex
@@ -15,6 +42,10 @@
       .head__article
         max-width: 60.3333%
         margin-bottom: 51px
+        +media("<=d")
+          max-width: 100%
+          margin-bottom: 20px
+
 
       .subtitle
         display: flex
@@ -28,11 +59,17 @@
         color: $el-white
         font-weight: normal
         line-height: 22px
+        +media("<=d")
+          font-size: 16px
+          line-height: normal
       h1
         margin-top: 10px
         font-weight: bold
         font-size: 42px
         margin-bottom: 0
+        +media("<=d")
+          margin-top: 8px
+          font-size: 28px
 
     .head__title__action
       margin-left: auto
@@ -41,9 +78,93 @@
   .head__content
     .head__tabs
       margin-top: 33px
+      +media("<=d")
+        overflow-x: auto
+        margin-top: 20px
+        .tab
+          font-size: 14px
+          white-space: nowrap
+
+
     .form__search
       margin-top: 35px
       padding-bottom: 60px
+
+      +media("<=d")
+        margin-top: 20px
+        padding-bottom: 0
+        width: calc(50% + 7.5px)
+        height: 38px
+        position: relative
+        border: 1px solid rgba($el-white, .15)
+        margin-left: -16px
+        margin-bottom: -1px
+        padding: 0
+        &::before, &::after
+          content: ' '
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+
+        &::before
+          content: 'ИЗМЕНИТЬ'
+          left: 15px
+          font-weight: 500
+          font-size: 12px
+          text-transform: uppercase
+
+        &::after
+          content: url("../img/sprites/intermediate-svg/i-arrow-menu_open.svg")
+          right: 15px
+          transform: rotate(180deg) translateY(25%)
+          +transition
+
+        &.js-form__search
+          &::after
+            transform: rotate(0deg) translateY(-50%)
+
+
+
+        .inputs
+          display: none
+
+        &.js-form__search
+
+          .inputs
+            display: flex
+            width: 100vw
+            top: 37px
+            background: $el-main
+            padding: 15px
+            z-index: 1
+            padding-bottom: 17px
+
+            .inputs__switcher
+              top: 67.5px
+              margin-right: 13px
+
+            .w-270
+              width: 100%
+              flex: 0 0 100%
+              max-width: 100%
+            .w-170
+              width: calc(50% - 8px)
+              flex: 0 0 calc(50% - 8px)
+              max-width: calc(50% - 8px)
+
+            .search__date
+              margin-right: 16px
+              .dropdown
+                left: 0
+                right: unset
+
+            .btn
+              width: 100%
+              max-width: 100%
+              flex: 0 0 100%
+              margin-right: 0
+              margin-left: 0
+              margin-top: 15px
 
       .w-270
         width: 270px
@@ -69,6 +190,8 @@
   flex-flow: row wrap
   margin: 40px -15px 0
   padding-bottom: 33px
+  +media("<=d")
+    width: 100%
 
   .head__subpages-item
     display: inline-flex
@@ -82,6 +205,8 @@
     margin-left: 15px
     margin-right: 15px
     border-top: 1px solid $el-white
+    +media("<=d")
+      width: calc(50% - 30px)
     &.head__subpages-active
       color: $el-accent
       border-top-color: $el-accent
@@ -92,8 +217,12 @@
   overflow: hidden
   background: transparent
   height: 600px
+  +media("<=d")
+    height: auto
   h1
     width: 340px
+    +media("<=d")
+      width: 100%
   .container
     position: absolute
     width: 671px
@@ -103,6 +232,13 @@
     z-index: 3
     margin-top: 50px
     top: 50%
+    +media("<=d")
+      width: 100%
+      position: relative
+      margin-left: 0
+      left: 0
+      top: 0
+      transform: unset
 
   .head__map-search
     width: 470px
@@ -110,6 +246,9 @@
     font-weight: normal
     font-size: 16px
     line-height: 140%
+    +media("<=d")
+      width: 100%
+      margin-bottom: 15px
     .btn
       border: none
       background: transparent
@@ -147,6 +286,8 @@
 .head__search
   width: 770px
   position: relative
+  +media("<=d")
+    width: 100%
   label
     display: none
   input

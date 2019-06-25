@@ -1,6 +1,12 @@
 .dropdown__sort
   position: relative
 
+  +media("<=d")
+    width: calc(50% + 7.5px)
+    position: absolute
+    right: 0
+    bottom: 0
+
 
 
 
@@ -19,6 +25,11 @@
     padding-left: 15px
     cursor: pointer
     width: 170px
+    +media("<=d")
+      border-radius: 0
+      width: 100%
+      border-left-color: transparent
+
 
     &::before
       content: ' '
@@ -43,6 +54,10 @@
     width: 210px
     z-index: 200
     right: 0
+    +media("<=d")
+      width: calc(100% - 30px) !important
+      margin-left: 15px
+      margin-right: 15px
 
     &.dropdown__sort--opened
       display: flex !important
@@ -87,6 +102,8 @@
       padding: 14px 18px
       align-items: flex-start
       justify-content: center
+      +media("<=d")
+        width: 100%
 
       span
         font-size: 12px
