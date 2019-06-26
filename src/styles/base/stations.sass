@@ -18,8 +18,8 @@
       width: 100%
       margin: 0
       margin-bottom: 15px
-      height: auto
-      flex-flow: column nowrap
+      height: 115px
+      flex-flow: row nowrap
     p
       margin-top: 0
       margin-bottom: 0
@@ -31,8 +31,14 @@
       font-weight: 500
       width: 160px
       +media("<=d")
-        width: 100%
-        margin-bottom: 15px
+        width: unset
+        flex: 0 0 46.153%
+        margin-right: 3px
+        max-width: 46.153%
+        p
+          word-wrap: break-word
+          font-size: 16px
+          font-weight: 500
 
     .card__column:last-child
       width: 142px
@@ -41,8 +47,9 @@
       font-weight: 500
       line-height: 146%
       +media("<=d")
+
         width: 100%
-        margin-left: 0
+        margin-left: auto
       span
         color: $txt-gray
 

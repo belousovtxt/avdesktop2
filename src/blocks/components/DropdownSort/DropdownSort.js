@@ -16,3 +16,15 @@ $(document).on("click", ".dropdown__sort--selected", function (e) {
 
 
 });
+
+
+$(document).on("click", ".only-months__head", function (e) {
+    e.preventDefault();
+    if($(e.target).hasClass("arr-left") || $(e.target).parent().hasClass("arr-left") || $(e.target).closest("div").hasClass("arr-left")) {
+        $(this).find("span").text((+$(this).find("span").text() - 1))
+    }
+    if($(e.target).hasClass("arr-right") || $(e.target).parent().hasClass("arr-right") || $(e.target).closest("div").hasClass("arr-right")) {
+        $(this).find("span").text((+$(this).find("span").text() + 1))
+    }
+
+});

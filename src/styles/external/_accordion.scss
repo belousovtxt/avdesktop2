@@ -10,7 +10,6 @@
  */
 
 
-
 .ui-accordion .ui-accordion-header {
   display: flex;
   cursor: pointer;
@@ -25,6 +24,14 @@
   line-height: 140%;
   padding: 0 87px 0 26px;
   color: $txt-dark;
+  @include media("<=d") {
+    font-size: 16px;
+    height: auto !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 56px;
+  }
 
   span.accordion-label {
     font-weight: 500;
@@ -39,6 +46,11 @@
     height: 24px;
     background: url("../img/sprites/intermediate-svg/i-arrow-quest.svg") center no-repeat;
     right: 35px;
+
+    @include media("<=d") {
+      right: 15px;
+      top: 15px;
+    }
 
     &.ui-icon-triangle-1-s {
       transform: rotate(180deg);
@@ -61,6 +73,9 @@
   padding-left: 26px;
   padding-right: 55px;
   padding-bottom: 18px;
+  @include media("<=d") {
+    margin-top: -24px;
+  }
 
   p:last-child {
     margin-bottom: 0;
@@ -73,6 +88,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
+
     .accordion-label {
       width: 100%;
       display: block;

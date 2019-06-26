@@ -10,9 +10,10 @@
   flex-flow: row wrap
   margin: 40px -15px -15px
   +media("<=d")
-    margin: 15px 0 0
-
-
+    margin: 15px 0
+    &:last-child
+      margin-bottom: 0
+      margin-top: -15px
 
 
   .news-item
@@ -40,6 +41,7 @@
   +media("<=d")
     margin-left: 0
     margin-right: 0
+    margin-bottom: 25px
   span
     display: inline-block
     background: $el-white
@@ -57,3 +59,6 @@
     left: 0
     transform: translateY(-50%)
     z-index: 1
+    +media("<=d")
+      top: 100%
+      margin-top: 10px

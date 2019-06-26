@@ -65,6 +65,9 @@
     display: flex
     flex-flow: column nowrap
     padding: 25px !important
+    +media("<=d")
+      height: 155px
+      padding: 15px !important
 
     &::before
       content: ' '
@@ -78,6 +81,8 @@
     .card__head
       padding-right: 81px
       margin-bottom: 0 !important
+      +media("<=d")
+        padding-right: 61px !important
 
       span
         font-size: 16px !important
@@ -108,10 +113,11 @@
         margin-left: -15px
         margin-right: -15px
         margin-top: -15px
+        margin-bottom: 15px
         padding-top: 15px
         padding-left: 15px
         padding-right: 8px
-        height: 48px
+        min-height: 48px
 
 
       span
@@ -157,6 +163,18 @@
     margin-top: 40px
     +media("<=d")
       width: 100%
+      .input-wrap
+        margin-left: -15px
+        margin-right: -15px
+        &:first-child
+          input
+            border-radius: 0
+            box-shadow: inset 0px 1px 0px #E1E1E1, inset 0px -1px 0px #E1E1E1 !important
+
+        margin-bottom: 0
+        input, select, textarea
+          border-radius: 0
+          box-shadow: inset 0px -1px 0px #E1E1E1
     @extend %mobileTopMargin
 
     .agreements
@@ -176,11 +194,18 @@
 
 
   &.card__gallery
+    .card__head
+      +media("<=d")
+        margin-bottom: 15px
     .card__content
       margin-left: -10px
       margin-right: -10px
       display: flex
       flex-flow: row wrap
+      +media("<=d")
+        margin-right: -7.5px
+        margin-left: -7.5px
+        margin-bottom: -15px
 
       a
         width: 128px
@@ -190,9 +215,11 @@
         +border-radius
         overflow: hidden
         +media("<=d")
-          width: calc(50% - 20px)
+          width: calc(50% - 15px)
           height: auto
-          margin-bottom: 10px
+          margin-right: 7.5px
+          margin-left: 7.5px
+          margin-bottom: 15px
 
         img
           width: 100%
@@ -209,13 +236,17 @@
       height: 125px
       top: 24px
       right: 26px
+      +border-radius
+      overflow: hidden
       +media("<=d")
         position: static
         width: 100%
         height: auto
         max-height: 300px
         overflow: hidden
-        margin-bottom: 15px
+        margin-bottom: 10px
+        +border-radius
+
         img
           width: 100%
           height: auto
@@ -253,6 +284,9 @@
 
 
   &.card__station-page
+    .card__head
+      +media("<=d")
+        margin-bottom: 15px
     .card__row
       width: 100%
 
@@ -271,7 +305,7 @@
         margin-right: 0
 
       .input-wrap
-        flex: 0 0 calc(50% - 20px)
+        width: calc(50% - 20px)
         margin-bottom: 20px
         margin-left: 10px
         margin-right: 10px
@@ -304,15 +338,16 @@
       margin-top: 10px
 
   &.card--people
-    .card__content
-      margin-left: -15px
-      margin-right: -15px
-      border-top: 1px solid $el-line-gray
-      .input-wrap
-        margin-bottom: 0 !important
-        input, select
-          border-radius: 0 !important
-          box-shadow: inset 0px -1px 0px #E1E1E1
+    +media("<=d")
+      .card__content
+        margin-left: -15px
+        margin-right: -15px
+        border-top: 1px solid $el-line-gray
+        .input-wrap
+          margin-bottom: 0 !important
+          input, select
+            border-radius: 0 !important
+            box-shadow: inset 0px -1px 0px #E1E1E1
 
   &.card--people
 
@@ -490,6 +525,23 @@
     align-items: flex-start
     +media("<=d")
       width: 100%
+      padding: 15px
+      padding-right: 30px
+      .content
+        order: 1
+      .icon
+        order: 2
+        margin-right: 0
+        margin-left: auto
+      &::before
+        right: 7px !important
+      span
+        margin-top: 5px
+        font-size: 13px
+      p
+        font-size: 15px
+      .link--bordered
+        display: none
 
     &:first-child
       margin-top: 40px
@@ -545,12 +597,17 @@
       +media("<=d")
         padding-right: 0
 
+
       span
         line-height: 140%
+        +media("<=d")
+          font-size: 16px
 
     .card__content
       display: flex
       flex-flow: row wrap
+      +media("<=d")
+        flex-flow: column nowrap
 
     .card__column
       display: flex
@@ -614,15 +671,26 @@
 .card--places
   .card__content
     padding: 40px 44px
+    +media("<=d")
+      padding: 15px 7.5px
+
 
     .places__list
       display: flex
       flex-flow: column wrap
-      height: 273px
+      height: 284px
       margin: -7.5px
+      margin-bottom: -17.5px
+      +transition
       +media("<=d")
         flex-flow: row wrap
         height: auto
+        width: 275px
+        margin-left: auto
+        margin-right: auto
+        transform: rotate(180deg)
+
+
 
     .places__item
       width: 42px
@@ -638,6 +706,11 @@
       margin: 7.5px
       +border-radius
       cursor: pointer
+      +transition
+      +media("<=d")
+        transform: rotate(180deg)
+
+
 
       &.places__disabled
         background: #EEEEEE
@@ -664,6 +737,7 @@
         margin-left: auto
         height: 42px
         width: 102px
+        display: none
 
       .places__wheel_icon
         +border-radius

@@ -10,14 +10,15 @@
       display: none
 
 
-
   +media("<=d")
     padding-top: 71px
     margin-top: -71px
-    min-height: 200px
+    min-height: 170px
     &.head--with-news
       .container
-        min-height: 170px
+        min-height: unset
+        padding-bottom: 64px
+
       .dropdown__sort
         width: 100%
         left: 1px
@@ -28,6 +29,7 @@
       font-weight: 500 !important
       color: rgba($el-white, .7) !important
       margin-top: 6px !important
+
   .container
     margin-top: 60px
     +media("<=d")
@@ -37,6 +39,7 @@
   .head__title
     display: flex
     flex-flow: row nowrap
+
     .head__title__content
 
       .head__article
@@ -47,13 +50,16 @@
           margin-bottom: 20px
 
 
+
       .subtitle
         display: flex
         flex-flow: row nowrap
         align-items: center
         margin-top: -5px
+
         .back
           margin-right: 8px
+
       span
         font-size: 18px
         color: $el-white
@@ -62,6 +68,7 @@
         +media("<=d")
           font-size: 16px
           line-height: normal
+
       h1
         margin-top: 10px
         font-weight: bold
@@ -70,6 +77,7 @@
         +media("<=d")
           margin-top: 8px
           font-size: 28px
+          margin-bottom: 15px
 
     .head__title__action
       margin-left: auto
@@ -80,7 +88,7 @@
       margin-top: 33px
       +media("<=d")
         overflow-x: auto
-        margin-top: 20px
+        margin-top: 5px
         .tab
           font-size: 14px
           white-space: nowrap
@@ -124,7 +132,6 @@
             transform: rotate(0deg) translateY(-50%)
 
 
-
         .inputs
           display: none
 
@@ -147,6 +154,7 @@
               width: 100%
               flex: 0 0 100%
               max-width: 100%
+
             .w-170
               width: calc(50% - 8px)
               flex: 0 0 calc(50% - 8px)
@@ -154,6 +162,7 @@
 
             .search__date
               margin-right: 16px
+
               .dropdown
                 left: 0
                 right: unset
@@ -191,7 +200,15 @@
   margin: 40px -15px 0
   padding-bottom: 33px
   +media("<=d")
-    width: 100%
+    width: unset
+    margin: 0
+    padding-bottom: 0
+    margin-left: -15px
+    margin-right: -15px
+    margin-top: 20px
+    &.js-head__subpages-links
+      .head__subpages-item
+        display: inline-flex
 
   .head__subpages-item
     display: inline-flex
@@ -205,11 +222,42 @@
     margin-left: 15px
     margin-right: 15px
     border-top: 1px solid $el-white
+
     +media("<=d")
-      width: calc(50% - 30px)
+      width: 100%
+      display: none
+      margin-left: 0
+      margin-right: 0
+      padding-top: 0
+      min-height: 63px
+      align-items: center
+      border-top: 1px solid rgba($el-white, .15)
+      padding-left: 15px
+      padding-right: 35px
+      margin-bottom: 0
+      order: 2
+
+
+
     &.head__subpages-active
       color: $el-accent
       border-top-color: $el-accent
+      +media("<=d")
+        display: inline-flex
+        border-top: 1px solid rgba($el-white, .15)
+        margin-bottom: 0
+        position: relative
+        order: 1
+        &::before
+          content: ' '
+          position: absolute
+          width: 10px
+          height: 6px
+          background: url("../img/sprites/intermediate-svg/i-arrow-menu_open.svg") center no-repeat
+          top: 50%
+          transform: translateY(-50%) rotate(180deg)
+          right: 15px
+
 
 
 .head--with_map
@@ -219,10 +267,35 @@
   height: 600px
   +media("<=d")
     height: auto
+    background: $el-main
+    #map-container
+      display: none
+    .head__map-search
+      margin-top: 0
+      margin-bottom: 15px
+
+
+      .btn
+        width: 24px
+        height: 24px
+        padding: 0
+        top: 50%
+        transform: translateY(-50%)
+        margin-right: 11px
+
+        svg
+          width: 24px
+          height: 24px
+
+      p
+        margin-top: 0
+        margin-bottom: 15px
+
   h1
     width: 340px
     +media("<=d")
       width: 100%
+
   .container
     position: absolute
     width: 671px
@@ -249,6 +322,7 @@
     +media("<=d")
       width: 100%
       margin-bottom: 15px
+
     .btn
       border: none
       background: transparent
@@ -257,6 +331,7 @@
       position: absolute
       top: 0
       right: 0
+
       svg path
         fill: $el-accent
 
@@ -275,11 +350,40 @@
       box-shadow: inset 800px 0px 250px rgba(32, 42, 60, 0.8)
       @media screen and (min-width: 1440px)
         box-shadow: inset 1100px 0px 250px rgba(32, 42, 60, 0.8)
-
+      +media("<=d")
+        box-shadow: none
 
 
 .head__small-map
   height: 420px
+  +media("<=d")
+    height: 400px
+
+    position: relative
+    &::before
+      content: ' '
+      width: 100%
+      height: 69px
+      top: 0
+      left: 0
+      background: $el-main
+      position: absolute
+      z-index: 3
+
+    .container
+      background: linear-gradient(0deg, rgba(32, 42, 60, 0.8), rgba(32, 42, 60, 0.8))
+      padding-top: 17px
+      padding-bottom: 0
+      top: 100%
+      transform: translateY(-100%)
+      margin-top: 0
+
+
+
+    #map-container
+      display: block
+
+
   h1
     width: 100%
 
@@ -288,10 +392,20 @@
   position: relative
   +media("<=d")
     width: 100%
+    &::after
+      content: ' '
+      display: block
+      width: 100%
+      height: 15px
+    .btn
+      margin-top: -7.5px
+
   label
     display: none
+
   input
     padding: 0 18px
+
   .btn
     position: absolute
     border: none

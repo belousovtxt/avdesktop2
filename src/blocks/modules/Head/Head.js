@@ -37,3 +37,20 @@ $(document).mouseup(function (e) { // событие клика по веб-до
 });
 
 
+$(document).on("click", ".head__subpages-item", function (e) {
+
+    // e.preventDefault();
+    if ($(this).parent().hasClass("js-head__subpages-links")) {
+        if($(e.target).hasClass("head__subpages-active")) {
+            e.preventDefault();
+            $(this).parent().removeClass("js-head__subpages-links");
+        }else{
+            return true;
+        }
+    } else {
+        e.preventDefault();
+        $(this).parent().addClass("js-head__subpages-links")
+    }
+});
+
+

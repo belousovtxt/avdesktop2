@@ -8,12 +8,16 @@
     border-radius: 0
     overflow: hidden
     vertical-align: bottom
+    margin-top: 69px
+    &#news-item
+      margin-top: 45.422%
     &.alert
       width: calc(100% - 30px)
       height: auto
       margin: 0 15px
       vertical-align: middle
       padding: 20px
+
       +border-radius
 
 
@@ -162,6 +166,11 @@
     margin-right: 0
     margin-bottom: 15px
     font-size: 15px
+    +media("<=d")
+      &::before
+        top: 50% !important
+        margin-top: 0
+
 
 
 
@@ -179,7 +188,7 @@
       .input-wrap
         margin-left: 10px
         margin-right: 10px
-        flex: 1
+        //flex: 1
         width: calc(50% - 20px)
         +media("<=d")
           width: 100%
