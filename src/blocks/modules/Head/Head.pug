@@ -23,6 +23,12 @@ mixin Head(type='default', subtitle='Билеты на автобус', title='�
                 if(attributes.newsSort)
                     .head__title__action
                         +DropdownSort("newsSort")
+                if(attributes.userCabinet)
+                    .head__title__action
+                        a(href="#").head__logout
+                            include ../../../img/svg/i-logout.svg
+                            span Выход
+
 
             .head__content
                 if block

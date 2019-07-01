@@ -4,7 +4,8 @@ block variables
     - const title = "Данные пользователя — Личный кабинет"
 
 block content
-    +Head('default', 'Смирнов Андрей Викторович', 'Личный кабинет')
+    +Head('default', 'Смирнов Андрей Викторович', 'Личный кабинет')(userCabinet=true)
+
         +Tabs(false, [{link: 'user-ticket.html', text: 'Ваши билеты', active: false}, {
             link: 'user-data.html',
             text: 'Данные пользователя',
