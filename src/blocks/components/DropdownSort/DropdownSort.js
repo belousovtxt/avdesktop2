@@ -1,7 +1,6 @@
 import $ from 'jquery'
 
-$(document).on("click", ".dropdown__sort--selected", function (e) {
-    e.preventDefault();
+/*$(document).on("click", ".dropdown__sort--selected", function (e) {
     if($(this).closest(".dropdown__sort").find(".dropdown__sort--items").hasClass("dropdown__sort--opened")) {
         $(this).closest(".dropdown__sort").find(".dropdown__sort--items").removeClass("dropdown__sort--opened");
     }else {
@@ -11,12 +10,17 @@ $(document).on("click", ".dropdown__sort--selected", function (e) {
             $(this).closest(".dropdown__sort--items").find(".item--selected").removeClass("item--selected");
             $(this).addClass("item--selected");
         })
-
     }
-
-
+});*/
+$(document).on("click", ".dropdown__sort--selected", function (e) {
+    $(this).siblings(".dropdown__sort--items").toggleClass("dropdown__sort--opened")
 });
 
+$(document).on("click", ".dropdown__sort--items .item", function (e) {
+    $(this).parent().find(".item--selected").removeClass("item--selected");
+    $(this).addClass("item--selected");
+    $(this).closest(".dropdown__sort--items").removeClass("dropdown__sort--opened");
+});
 
 $(document).on("click", ".only-months__head", function (e) {
     e.preventDefault();

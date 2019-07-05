@@ -28,6 +28,7 @@ footer
         font-size: 13px
         color: $txt-gray-light
         align-items: center
+
         &.footer__col__copyright
           margin-top: auto
           margin-bottom: auto
@@ -46,6 +47,13 @@ footer
       display: flex
       flex-flow: column nowrap
       color: $el-white
+      a
+        +transition
+        &:hover
+          color: $el-accent
+        &:active
+          color: darken($el-accent, 10%)
+
 
       &.footer__col-links
         +media("<=d")
@@ -152,6 +160,10 @@ footer
           &.link--bordered
             padding-bottom: 0
             border-color: fade_out($el-white, .3)
+            &:hover
+              border-bottom-color: $el-accent
+            &:active
+              border-bottom-color: darken($el-accent, 10%)
 
           &.btn
             background: transparent
@@ -163,9 +175,23 @@ footer
             font-size: 15px
             margin-right: 5px
             margin-left: 5px
+            +transition
+            &:hover
+              background: $el-accent
+              color: $el-white
+              svg path
+                fill: $el-white
+            &:active, &:focus
+              background: darken($el-accent, 10%)
+              border-color: darken($el-accent, 10%)
+              color: $el-white
+              svg path
+                fill: $el-white
             +media("<=d")
               margin-left: 0
               margin-right: 0
               width: 100%
             svg
               margin-right: 8px
+              path
+                +transition

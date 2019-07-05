@@ -16,6 +16,12 @@
   border: none
   +btn-shadow
   +border-radius
+  +transition
+  &:hover
+    background: darken($el-accent, 5%)
+
+  &:active, &:focus
+    background: darken($el-accent, 10%)
 
   +media("<=d")
     width: 100%
@@ -37,11 +43,27 @@
     padding-left: 20px
     padding-right: 20px
     box-shadow: none
+    +transition
+    &:hover
+      color: darken($el-accent, 5%)
+      border: 1px solid darken($el-line-gray, 5%)
+    &:active, &:focus
+      color: darken($el-accent, 10%)
+      border: 1px solid darken($el-line-gray, 10%)
+
 
   &.btn--white
     color: $el-accent
     background: $el-white
     width: 250px
+    +transition
+    &:hover
+      color: darken($el-accent, 5%)
+      background: darken($el-white, 3%)
+    &:active
+      color: darken($el-accent, 10%)
+      background: darken($el-white, 5%)
+
 
 
   &.btn--icon

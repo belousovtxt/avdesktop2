@@ -13,6 +13,11 @@
   /* position relative and z-index fix webkit rendering fonts issue */
   position: relative;
   z-index: 1; }
+
+.owl-dots {
+  display: none !important;
+}
+
 .owl-carousel .owl-stage {
   position: relative;
   -ms-touch-action: pan-Y;

@@ -35,6 +35,11 @@
 
     a
       color: $el-accent
+      +transition
+      &:hover
+        color: darken($el-accent, 5%)
+      &:active
+        color: darken($el-accent, 10%)
 
     p
       margin-bottom: 10px
@@ -94,6 +99,10 @@
         margin-right: 15px
         text-decoration: none
         border-bottom: 1px dashed $el-accent
+        &:hover
+          border-bottom-color: darken($el-accent, 5%)
+        &:active
+          border-bottom-color: darken($el-accent, 10%)
         &:last-child
           margin-right: 0
   .img

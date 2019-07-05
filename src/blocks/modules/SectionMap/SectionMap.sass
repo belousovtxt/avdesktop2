@@ -66,6 +66,11 @@
         font-size: 14px
         line-height: 140%
         color: $el-accent
+        +transition
+        &:hover
+          color: darken($el-accent, 5%)
+        &:active
+          color: darken($el-accent, 10%)
         +media("<=d")
           width: 50%
         &.bold
@@ -76,5 +81,10 @@
       font-size: 14px
       color: $el-accent
       border-bottom: 1px dashed $el-accent
+      +transition
+      &:hover
+        color: darken($el-accent, 5%)
+      &:active
+        color: darken($el-accent, 10%)
       +media("<=d")
         margin-top: 20px

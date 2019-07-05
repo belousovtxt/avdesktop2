@@ -14,6 +14,11 @@
     width: calc(33.333% - 30px)
     height: 140px
     align-items: flex-start
+    +transition
+    &:hover
+      border-color: darken($el-line-gray, 5%)
+    &:active
+      border-color: darken($el-line-gray, 10%)
     +media("<=d")
       width: 100%
       margin: 0
@@ -30,6 +35,14 @@
       line-height: 22px
       font-weight: 500
       width: 160px
+      +transition
+      &:hover
+        color: darken($el-accent, 5%)
+      &:active
+        color: darken($el-accent, 10%)
+
+
+
       +media("<=d")
         width: unset
         flex: 0 0 46.153%

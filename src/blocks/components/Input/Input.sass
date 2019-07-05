@@ -1,3 +1,6 @@
+input:disabled
+  background: $el-select
+
 .input-wrap
   position: relative
 
@@ -101,6 +104,11 @@
     color: $txt-gray
     a
       color: $el-accent
+      +transition
+      &:hover
+        color: darken($el-accent, 5%)
+      &:active
+        color: darken($el-accent, 10%)
 
 
 .inputs-three-in-row

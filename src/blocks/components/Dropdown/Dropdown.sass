@@ -1,3 +1,7 @@
+.js-dropdown--opened
+  .dropdown
+    display: block
+
 .dropdown
   display: none
   position: absolute
@@ -13,7 +17,7 @@
   font-size: 15px
   font-weight: 500
   overflow-y: auto
-  max-height: 500px
+  max-height: 310px
   right: 0
 
   ul
@@ -35,6 +39,10 @@
 
   &[data-dropdown='city']
     width: 270px
+    .item__content
+      +transition
+      &:hover
+        opacity: .8
     +media("<=d")
       width: 100%
   &[data-dropdown='date']

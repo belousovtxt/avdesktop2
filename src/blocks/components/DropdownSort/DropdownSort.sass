@@ -25,6 +25,13 @@
     padding-left: 15px
     cursor: pointer
     width: 170px
+    +transition
+    &:hover
+      color: darken($el-white, 5%)
+      border: 1px solid darken(rgba(#FFFFFF, .15%), 5%)
+    &:active
+      color: darken($el-white, 10%)
+      border: 1px solid darken(rgba(#FFFFFF, .15%), 10%)
     +media("<=d")
       border-radius: 0
       width: 100%

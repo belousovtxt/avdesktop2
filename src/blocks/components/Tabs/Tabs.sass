@@ -12,6 +12,13 @@
     color: rgba($el-white, .7)
     margin-left: 10px
     margin-right: 10px
+    +transition
+    &:hover
+      color: darken(rgba($el-white, .7), 5%)
+      border-bottom-color: darken(rgba($el-white, .7), 5%)
+    &:active
+      color: darken(rgba($el-white, .7), 10%)
+      border-bottom-color: darken(rgba($el-white, .7), 10%)
     &.tab--active
       color: $el-accent
       border-bottom-color: $el-accent

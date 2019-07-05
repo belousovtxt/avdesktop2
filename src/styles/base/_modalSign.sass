@@ -93,6 +93,11 @@
       color: $el-accent
       font-size: 14px
       border-bottom: $el-accent
+      +transition
+      &:hover
+        color: darken($el-accent, 5%)
+      &:active
+        color: darken($el-accent, 10%)
 
 
 

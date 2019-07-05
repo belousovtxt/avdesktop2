@@ -4,12 +4,12 @@ section#search
   background: url("../img/8c9b0f1f08d4ff47365dae3276c81cab.png")
   margin-top: -100px
   position: relative
-  z-index: 0
   padding-top: 100px
   display: flex
   flex-flow: column
   align-items: center
   color: $el-white
+  z-index: 2
   +media("<=d")
     height: auto
     padding-top: 70px
@@ -87,6 +87,12 @@ section#search
     margin-right: -19px
     z-index: 1
     cursor: pointer
+    +transition
+    &:hover
+      background: darken($el-accent, 5%)
+
+    &:active, &:focus
+      background: darken($el-accent, 10%)
     +media("<=d")
       transform: rotate(90deg)
       margin-right: 0

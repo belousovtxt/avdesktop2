@@ -65,6 +65,11 @@
     display: flex
     flex-flow: column nowrap
     padding: 25px !important
+    +transition
+    &:hover
+      border-color: darken($el-line-gray, 5%)
+    &:active
+      border-color: darken($el-line-gray, 10%)
     +media("<=d")
       height: 155px
       padding: 15px !important
@@ -147,6 +152,19 @@
           font-size: 12px
           color: $txt-gray
           font-weight: 500
+          +transition
+
+          &:hover
+            color: darken($txt-gray, 5%)
+            border-color: darken($el-line-gray, 5%)
+            svg path
+              fill: darken($el-accent, 5%)
+          &:active
+            color: darken($txt-gray, 10%)
+            border-color: darken($el-line-gray, 10%)
+            svg path
+              fill: darken($el-accent, 10%)
+
           +media("<=d")
             svg
               margin-right: 0
@@ -156,6 +174,8 @@
 
           svg
             margin-right: 10px
+            path
+              +transition
 
 
   &.card--feedback
@@ -407,6 +427,13 @@
         color: $el-accent
         font-size: 14px
         border-bottom: 1px dashed $el-accent
+        +transition
+        &:hover
+          color: darken($el-accent, 5%)
+          border-bottom-color: darken($el-accent, 5%)
+        &:active
+          color: darken($el-accent, 10%)
+          border-bottom-color: darken($el-accent, 10%)
 
 
   &.card--payments
@@ -707,6 +734,9 @@
       +border-radius
       cursor: pointer
       +transition
+      &:hover
+        opacity: .8
+
       +media("<=d")
         transform: rotate(180deg)
 

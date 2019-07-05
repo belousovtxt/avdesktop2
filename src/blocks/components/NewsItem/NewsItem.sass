@@ -45,3 +45,10 @@
     font-size: 14px
     font-weight: normal
     border-bottom: 1px dashed rgba(255, 0, 0, 0.5)
+    +transition
+    &:hover
+      color: darken($el-accent, 5%)
+      border-bottom: 1px dashed darken(rgba(255, 0, 0, 0.5), 5%)
+    &:active, &:focus
+      color: darken($el-accent, 10%)
+      border-bottom: 1px dashed darken(rgba(255, 0, 0, 0.5), 10%)

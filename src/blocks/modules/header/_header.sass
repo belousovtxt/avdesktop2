@@ -52,6 +52,8 @@ header.header
         height: 24px
         background: url("../img/sprites/intermediate-svg/ibtn-menu.svg") center no-repeat
         +transition
+        &:hover
+          opacity: .8
 
       a
         margin: 0
@@ -66,6 +68,9 @@ header.header
             background: url("../img/sprites/intermediate-svg/ibtn-user.svg") center no-repeat
             border-bottom: 0
             padding-bottom: 0
+            +transition
+            &:hover
+              opacity: .8
 
       .link--bordered
 
@@ -79,6 +84,9 @@ header.header
 
       &:hover
         color: $el-accent
+
+      &:active, &:focus
+        color: darken($el-accent, 10%)
 
         .icon-menu
           //make icon accent
@@ -127,6 +135,8 @@ header.header
     .link--bordered
       color: $el-accent
       border-bottom-color: rgba($el-accent, .5)
+      &:hover
+
 
 
     .header--on-white
@@ -236,6 +246,7 @@ header.header
               display: flex
             a
 
+
               &.link--bordered
                 padding-bottom: 0
                 border-color: fade_out($txt-gray, .5)
@@ -251,8 +262,18 @@ header.header
                 margin-right: 5px
                 margin-left: 5px
                 box-shadow: none
+                +transition
                 svg
                   margin-right: 8px
+
+                &:hover
+                  background: $el-accent
+                  color: $el-white
+                  opacity: 1
+                  svg
+                    path
+                      fill: $el-white
+
           &:first-child
             margin-left: calc(16.666% + 5px)
             +media("<=d")
@@ -268,6 +289,14 @@ header.header
             line-height: 140%
             font-size: 14px
             color: $txt-gray
+            +transition
+            &:hover
+              color: $el-accent
+              opacity: 1
+
+            &.link--bordered:hover
+              border-bottom-color: $el-accent
+
 
 
 
