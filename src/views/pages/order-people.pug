@@ -16,9 +16,9 @@ block content
                 .card__head
                     span Пассажир №1
                     .action.action--fill
-
-                        include ../../img/svg/i-block-user.svg
-                        | Заполнить
+                        .action__caller
+                            include ../../img/svg/i-block-user.svg
+                            | Заполнить
                         +DropdownPeoples
                 .card__content
                     .inputs
@@ -48,8 +48,9 @@ block content
                 .card__head
                     span Пассажир №2
                     .action.action--fill
-                        include ../../img/svg/i-block-user.svg
-                        | Заполнить
+                        .action__caller
+                            include ../../img/svg/i-block-user.svg
+                            | Заполнить
 
                         +DropdownPeoples
                 .card__content
