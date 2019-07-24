@@ -4,11 +4,11 @@ mixin DropdownPeoples
             span Пассажиры
             a(href="#").js-close-popup
                 include ../../../img/svg/i-block-close.svg
-        .dropdown__peoples-section
+        .dropdown__peoples-section.js-fill-people(data-passenger='{"name":"Андрей", "lastname":"Смирнов", "secondname":"Вкиторович"}')
             span Смирнов Андрей Викторович
-            a(href="#")
+            a(href="#").js-delete-people
                 include ../../../img/svg/i-garbage.svg
-        .dropdown__peoples-section
+        .dropdown__peoples-section.js-fill-people(data-passenger='{"name":"Ирина", "lastname":"Смирнова", "secondname":"Сергеевна"}')
             span Смирнова Ирина Сергеевна
-            a(href="#")
+            a(href="#").js-delete-people
                 include ../../../img/svg/i-garbage.svg
