@@ -38,19 +38,24 @@ $(document).mouseup(function (e) { // событие клика по веб-до
 
 
 $(document).on("click", ".head__subpages-item", function (e) {
+    if($(document).width() < 1200) { //Condition for mobile double-click.
+        if ($(this).parent().hasClass("js-head__subpages-links")) {
+            if($(e.target).hasClass("head__subpages-active")) {
 
-    // e.preventDefault();
-    if ($(this).parent().hasClass("js-head__subpages-links")) {
-        if($(e.target).hasClass("head__subpages-active")) {
+                e.preventDefault();
+                $(this).parent().removeClass("js-head__subpages-links");
+            }else{
+                return true;
+            }
+        } else {
+
             e.preventDefault();
-            $(this).parent().removeClass("js-head__subpages-links");
-        }else{
-            return true;
+            $(this).parent().addClass("js-head__subpages-links")
+
         }
-    } else {
-        e.preventDefault();
-        $(this).parent().addClass("js-head__subpages-links")
     }
+    // e.preventDefault();
+
 });
 
 

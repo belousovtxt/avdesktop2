@@ -1,9 +1,61 @@
+.container--flex
+  display: flex
+  align-items: flex-start
+  +media("<=d")
+    display: flex
+    flex-flow: column nowrap
+
+  .article__page
+    +media("<=d")
+      width: 100%
+
+  .article__page-right
+    width: calc(33.333% - 30px)
+    +media("<=d")
+      width: 100%
+      margin-top: 20px
+    margin-left: auto
+    .all-cities__show
+      display: inline-block
+      margin-top: 15px
+      color: $el-accent
+      font-size: 14px
+      border-bottom: 1px dashed $el-accent
+
+    .card
+      height: auto
+
+
+.article__page-right
+  display: inline-flex
+  width: 33.3333%
+  margin-top: 40px
+
+  .card
+    width: 100%
+    overflow: hidden
+
+  .all-cities__grid
+    display: flex
+    flex-flow: column wrap
+    height: 400px
+
+    a
+      width: 50%
+      color: $el-accent
+      font-size: 14px
+      line-height: 140%
+
+      &.bold
+        font-weight: bold
+
 .article__page
   width: 66.666%
   margin-top: 40px
   +media("<=d")
     width: 100%
   @extend %mobileTopMargin
+
   p.descriptor
     font-size: 24px
     line-height: 145%
@@ -13,6 +65,7 @@
     +media("<=d")
       font-size: 18px
       margin-bottom: 15px
+
   p
     line-height: 170%
     font-size: 16px
@@ -23,11 +76,12 @@
   a
     color: $el-accent
     +transition
+
     &:hover
       color: darken($el-accent, 5%)
+
     &:active
       color: darken($el-accent, 10%)
-
 
 
   img
@@ -43,17 +97,20 @@
     margin-bottom: 0
     +media("<=d")
       padding-left: 38px
+
     li
       margin-bottom: 10px
 
   ol
     counter-reset: myCounter
+
     li
       list-style: none
       position: relative
+
       &::before
         counter-increment: myCounter
-        content: counter(myCounter)'.'
+        content: counter(myCounter) '.'
         color: $el-accent
         position: absolute
         left: -40px
@@ -62,12 +119,12 @@
         width: 32px
 
 
-
-
   ul
     list-style: none
+
     li
       position: relative
+
       &::before
         content: ' '
         position: absolute
@@ -135,12 +192,12 @@
         display: block
 
 
-
     tr
 
       display: flex
       justify-content: space-between
       border-bottom: 1px solid $el-line-gray
+
       &:last-child
         border-bottom: none
 
