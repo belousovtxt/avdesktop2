@@ -102,6 +102,8 @@
         //display: none !important
         margin-top: 28px
 
+
+
         .item
           display: none !important
           margin-bottom: 0 !important
@@ -228,11 +230,13 @@
           border-top: 1px solid $el-line-gray
           padding-top: 12px
           .item
-            width: 50% !important
+            width: calc(50% - 32px) !important
             display: flex !important
             flex-flow: column nowrap
             height: auto
             align-items: flex-start
+            &:last-child
+              margin-bottom: 14px !important
             .title
               display: block !important
             .info
@@ -281,9 +285,13 @@
       padding-left: 24px
       width: 100%
       .ticket__date
-        flex: 0 0 32.5797%
-        margin-right: 30px
+        flex: 0 0 23.291%
+        margin-right: 32px
+        +media("<=d")
+          flex: 0 0 32.5797%
+          margin-right: 30px
         &:first-child
+          margin-right: 80px
           .ticket__date_time
             position: relative
             &::before
@@ -292,13 +300,23 @@
               width: 16px
               height: 7px
               background: url("../img/sprites/intermediate-svg/i-arrow-dir.svg") center no-repeat
-              right: 0
+              right: -40px
+              +media("<=d")
+                right: 0
               top: 50%
               transform: translateY(-50%)
 
       .ticket__other-info
         display: flex
-        flex-flow: column nowrap
+        flex-flow: column wrap
+        margin-left: -16px
+        margin-right: -16px
+        height: 110px
+        justify-content: center
+        +media("<=d")
+          height: auto
+
+
         .item
           display: flex
           flex-flow: column nowrap
@@ -306,6 +324,13 @@
           font-weight: 500
           line-height: 146%
           margin-bottom: 14px
+
+          margin-left: 16px
+          margin-right: 16px
+
+          &:nth-child(2n)
+            margin-bottom: 0
+
           &:last-child
             margin-bottom: 0
           span
